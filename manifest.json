@@ -1,0 +1,25 @@
+{
+  "name": "Bear Run – S.G.A. 5K Registration",
+  "short_name": "SGA 5K",
+  "description": "Bear Run – S.G.A. 5K Registration",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#FFF9E8",
+  "theme_color": "#EA816E",
+  "icons": [
+    {
+      "src": "./icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "./icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}
