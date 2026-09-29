@@ -1,0 +1,4856 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- =========================================================
+     SECTION 1 OF 5
+     APP SETTINGS + HEAD
+========================================================= -->
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+>
+
+<title>
+    Bear Run – S.G.A. 5K Registration
+</title>
+
+<meta
+    name="description"
+    content="Bear Run – S.G.A. 5K Registration"
+>
+
+<meta
+    name="theme-color"
+    content="#EA816E"
+>
+
+<meta
+    name="apple-mobile-web-app-capable"
+    content="yes"
+>
+
+<meta
+    name="apple-mobile-web-app-status-bar-style"
+    content="default"
+>
+
+<meta
+    name="apple-mobile-web-app-title"
+    content="SGA 5K"
+>
+
+<!-- Simple built-in browser icon -->
+
+<link
+    rel="icon"
+    href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%23FAE4A0'/%3E%3Ctext x='50' y='46' font-size='25' text-anchor='middle' font-family='Arial' font-weight='bold' fill='%23EA816E'%3EBEAR%3C/text%3E%3Ctext x='50' y='73' font-size='27' text-anchor='middle' font-family='Arial' font-weight='bold' fill='%232A2A2E'%3E5K%3C/text%3E%3C/svg%3E"
+>
+
+
+<!-- =========================================================
+     SECTION 2 OF 5
+     DESIGN / CSS
+========================================================= -->
+
+<style>
+
+:root{
+
+    --cream:#FAE4A0;
+    --cream-light:#FFF9E8;
+    --cream-card:#FFFDF6;
+
+    --coral:#EA816E;
+    --coral-dark:#C96557;
+    --coral-light:#FCE2DA;
+
+    --charcoal:#29292D;
+    --charcoal-light:#44444A;
+
+    --teal:#2F7C83;
+    --teal-dark:#245E64;
+    --teal-light:#E0F0ED;
+
+    --navy:#324F68;
+
+    --red:#B74947;
+    --red-light:#FBE5E2;
+
+    --muted:#706B63;
+
+    --border:#E5D9B8;
+
+    --white:#FFFFFF;
+
+    --shadow:
+        0 14px 40px
+        rgba(42,42,46,.09);
+
+}
+
+
+/* RESET */
+
+*{
+    box-sizing:border-box;
+}
+
+
+html{
+    scroll-behavior:smooth;
+}
+
+
+body{
+
+    margin:0;
+
+    min-height:100vh;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    color:
+        var(--charcoal);
+
+    background:
+
+        radial-gradient(
+            circle at 5% 0%,
+            rgba(234,129,110,.14),
+            transparent 28rem
+        ),
+
+        radial-gradient(
+            circle at 98% 15%,
+            rgba(47,124,131,.11),
+            transparent 30rem
+        ),
+
+        var(--cream-light);
+
+}
+
+
+button,
+input,
+select{
+
+    font:inherit;
+
+}
+
+
+button{
+    cursor:pointer;
+}
+
+
+.shell{
+
+    width:
+        min(
+            980px,
+            92%
+        );
+
+    margin:
+        28px
+        auto
+        60px;
+
+}
+
+
+/* OFFLINE */
+
+.offline-banner{
+
+    display:none;
+
+    position:sticky;
+
+    top:0;
+
+    z-index:100;
+
+    padding:
+        10px
+        16px;
+
+    text-align:center;
+
+    background:
+        var(--red);
+
+    color:white;
+
+    font-size:12px;
+
+    font-weight:bold;
+
+}
+
+
+.offline-banner.show{
+    display:block;
+}
+
+
+/* INSTALL CARD */
+
+.install-card{
+
+    display:flex;
+
+    justify-content:
+        space-between;
+
+    align-items:center;
+
+    gap:16px;
+
+    margin-bottom:
+        18px;
+
+    padding:
+        15px
+        17px;
+
+    border:
+        1px solid
+        #DCCB99;
+
+    border-radius:
+        16px;
+
+    background:
+        #FFF5CF;
+
+    box-shadow:
+        0 8px 24px
+        rgba(42,42,46,.06);
+
+}
+
+
+.install-card strong{
+
+    display:block;
+
+    margin-bottom:3px;
+
+    font-size:13px;
+
+}
+
+
+.install-card span{
+
+    display:block;
+
+    color:
+        var(--muted);
+
+    font-size:11px;
+
+    line-height:1.5;
+
+}
+
+
+.install-help{
+
+    display:none;
+
+    margin-top:
+        10px;
+
+    padding:
+        11px
+        12px;
+
+    border-radius:
+        11px;
+
+    background:
+        rgba(255,255,255,.65);
+
+    font-size:11px;
+
+    line-height:1.6;
+
+}
+
+
+.install-help.show{
+    display:block;
+}
+
+
+/* HERO */
+
+.hero{
+
+    display:grid;
+
+    grid-template-columns:
+        1fr
+        230px;
+
+    gap:28px;
+
+    align-items:center;
+
+    position:relative;
+
+    overflow:hidden;
+
+    padding:
+        35px;
+
+    margin-bottom:
+        22px;
+
+    border-radius:
+        24px;
+
+    color:
+        var(--cream-light);
+
+    background:
+
+        linear-gradient(
+            135deg,
+            #29292D 0%,
+            #343439 58%,
+            #324F68 100%
+        );
+
+    box-shadow:
+
+        0 20px 52px
+        rgba(42,42,46,.18);
+
+}
+
+
+.hero::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:300px;
+
+    height:300px;
+
+    right:-120px;
+
+    top:-120px;
+
+    border-radius:50%;
+
+    background:
+        rgba(234,129,110,.12);
+
+}
+
+
+.hero-copy{
+
+    position:relative;
+
+    z-index:2;
+
+}
+
+
+.hero-badge{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:7px;
+
+    padding:
+        7px
+        11px;
+
+    margin-bottom:
+        14px;
+
+    border:
+        1px solid
+        rgba(250,228,160,.30);
+
+    border-radius:
+        999px;
+
+    background:
+        rgba(250,228,160,.08);
+
+    color:
+        var(--cream);
+
+    font-size:
+        11px;
+
+    font-weight:
+        800;
+
+    letter-spacing:
+        .4px;
+
+}
+
+
+.hero h1{
+
+    margin:0;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size:
+        clamp(
+            31px,
+            5vw,
+            49px
+        );
+
+    line-height:
+        1.04;
+
+}
+
+
+.hero h1 span{
+
+    color:
+        var(--coral);
+
+}
+
+
+.hero p{
+
+    max-width:
+        650px;
+
+    margin:
+        13px
+        0
+        0;
+
+    color:
+        #F8F0D7;
+
+    line-height:
+        1.6;
+
+}
+
+
+.hero-info{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:9px;
+
+    margin-top:
+        20px;
+
+}
+
+
+.info-chip{
+
+    padding:
+        9px
+        12px;
+
+    border:
+        1px solid
+        rgba(250,228,160,.22);
+
+    border-radius:
+        11px;
+
+    background:
+        rgba(250,228,160,.09);
+
+    color:
+        #FFF7DB;
+
+    font-size:
+        12px;
+
+    font-weight:
+        800;
+
+}
+
+
+/* BEAR RUN LOGO */
+
+.logo-box{
+
+    position:relative;
+
+    z-index:2;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+}
+
+
+.bear-logo{
+
+    width:
+        210px;
+
+    aspect-ratio:
+        1;
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    justify-content:center;
+
+    border:
+        6px solid
+        var(--cream);
+
+    border-radius:
+        26px;
+
+    background:
+        var(--cream);
+
+    box-shadow:
+
+        0 15px 35px
+        rgba(0,0,0,.25);
+
+    text-align:center;
+
+}
+
+
+.bear-logo .small{
+
+    color:
+        var(--teal);
+
+    font-size:
+        31px;
+
+    font-weight:
+        900;
+
+}
+
+
+.bear-logo .big{
+
+    margin-top:
+        3px;
+
+    color:
+        var(--coral);
+
+    font-family:
+        Georgia,
+        serif;
+
+    font-size:
+        42px;
+
+    font-weight:
+        bold;
+
+    line-height:
+        .9;
+
+}
+
+
+.bear-logo .run{
+
+    margin-top:
+        8px;
+
+    color:
+        var(--charcoal);
+
+    font-size:
+        33px;
+
+}
+
+
+/* CARDS */
+
+.card{
+
+    margin-bottom:
+        18px;
+
+    padding:
+        24px;
+
+    border:
+        1px solid
+        var(--border);
+
+    border-radius:
+        19px;
+
+    background:
+        rgba(255,253,246,.97);
+
+    box-shadow:
+        var(--shadow);
+
+}
+
+
+.card-head{
+
+    display:flex;
+
+    justify-content:
+        space-between;
+
+    align-items:
+        flex-start;
+
+    gap:18px;
+
+    margin-bottom:
+        18px;
+
+}
+
+
+.card-head h2{
+
+    margin:
+        0
+        0
+        4px;
+
+    font-family:
+        Georgia,
+        serif;
+
+    font-size:
+        22px;
+
+}
+
+
+.card-head p{
+
+    margin:0;
+
+    color:
+        var(--muted);
+
+    font-size:
+        12px;
+
+    line-height:
+        1.5;
+
+}
+
+
+.section-number{
+
+    width:
+        36px;
+
+    height:
+        36px;
+
+    display:grid;
+
+    place-items:center;
+
+    flex:
+        0
+        0
+        auto;
+
+    border-radius:
+        11px;
+
+    background:
+        var(--coral);
+
+    color:white;
+
+    font-size:
+        13px;
+
+    font-weight:
+        900;
+
+}
+
+
+/* FORM */
+
+.form-row{
+
+    display:grid;
+
+    grid-template-columns:
+        1fr
+        1fr;
+
+    gap:
+        14px;
+
+}
+
+
+.field{
+
+    margin-bottom:
+        14px;
+
+}
+
+
+.field label{
+
+    display:block;
+
+    margin-bottom:
+        7px;
+
+    font-size:
+        12px;
+
+    font-weight:
+        800;
+
+}
+
+
+.required{
+
+    color:
+        var(--coral-dark);
+
+}
+
+
+.field input,
+.field select{
+
+    width:
+        100%;
+
+    padding:
+        12px
+        13px;
+
+    border:
+        1px solid
+        #DDD3B5;
+
+    border-radius:
+        11px;
+
+    outline:none;
+
+    color:
+        var(--charcoal);
+
+    background:
+        white;
+
+}
+
+
+.field input:focus,
+.field select:focus{
+
+    border-color:
+        var(--coral);
+
+    box-shadow:
+
+        0 0 0 3px
+        rgba(234,129,110,.13);
+
+}
+
+
+/* PARTICIPANT */
+
+.participant{
+
+    margin:
+        15px
+        0;
+
+    padding:
+        20px;
+
+    border:
+        1px solid
+        #E2D7B9;
+
+    border-radius:
+        17px;
+
+    background:
+        #FFFCF2;
+
+}
+
+
+.participant-top{
+
+    display:flex;
+
+    justify-content:
+        space-between;
+
+    align-items:center;
+
+    gap:12px;
+
+    margin-bottom:
+        16px;
+
+}
+
+
+.participant-top h3{
+
+    margin:0;
+
+    font-family:
+        Georgia,
+        serif;
+
+    font-size:
+        17px;
+
+}
+
+
+.subsection{
+
+    margin:
+        17px
+        0
+        10px;
+
+    padding-top:
+        14px;
+
+    border-top:
+        1px solid
+        #E6DDBF;
+
+}
+
+
+.subsection h4{
+
+    margin:
+        0
+        0
+        12px;
+
+    color:
+        var(--teal-dark);
+
+    font-size:
+        12px;
+
+    letter-spacing:
+        .65px;
+
+    text-transform:
+        uppercase;
+
+}
+
+
+.student-fields,
+.parent-info,
+.second-emergency,
+.young-child-note,
+.minor-consent{
+
+    display:none;
+
+}
+
+
+/* CONSENT */
+
+.minor-consent{
+
+    margin:
+        3px
+        0
+        17px;
+
+    padding:
+        16px;
+
+    border:
+        1px solid
+        #B8DCD6;
+
+    border-radius:
+        14px;
+
+    background:
+        var(--teal-light);
+
+    color:
+        #214E53;
+
+    font-size:
+        12px;
+
+    line-height:
+        1.55;
+
+}
+
+
+.minor-consent strong{
+
+    display:block;
+
+    margin-bottom:
+        6px;
+
+    font-size:
+        13px;
+
+}
+
+
+.minor-consent p{
+
+    margin:
+        0
+        0
+        11px;
+
+}
+
+
+.young-child-note{
+
+    margin-top:
+        12px;
+
+    padding:
+        14px;
+
+    border:
+        1px solid
+        #E0BE72;
+
+    border-radius:
+        12px;
+
+    background:
+        #FFF2C9;
+
+    color:
+        #6F4D14;
+
+    font-size:
+        12px;
+
+    line-height:
+        1.55;
+
+}
+
+
+/* CHECKBOX */
+
+.check-row{
+
+    display:flex;
+
+    align-items:
+        flex-start;
+
+    gap:
+        10px;
+
+    margin-top:
+        12px;
+
+}
+
+
+.check-row input{
+
+    width:auto;
+
+    margin-top:
+        3px;
+
+}
+
+
+.check-row label{
+
+    font-weight:
+        800;
+
+}
+
+
+/* WAIVER */
+
+.waiver{
+
+    padding:
+        17px;
+
+    border:
+        1px solid
+        #B8DCD6;
+
+    border-radius:
+        14px;
+
+    background:
+        var(--teal-light);
+
+    color:
+        #234B4F;
+
+    font-size:
+        12px;
+
+    line-height:
+        1.65;
+
+}
+
+
+/* BUTTONS */
+
+.primary,
+.secondary,
+.danger{
+
+    border:0;
+
+    border-radius:
+        11px;
+
+    padding:
+        11px
+        16px;
+
+    font-size:
+        12px;
+
+    font-weight:
+        900;
+
+}
+
+
+.primary{
+
+    background:
+        var(--coral);
+
+    color:white;
+
+    box-shadow:
+
+        0 8px 18px
+        rgba(234,129,110,.22);
+
+}
+
+
+.primary:hover{
+
+    background:
+        var(--coral-dark);
+
+}
+
+
+.secondary{
+
+    background:
+        #F1E9D2;
+
+    color:
+        var(--charcoal);
+
+}
+
+
+.secondary:hover{
+
+    background:
+        #E9DFC3;
+
+}
+
+
+.danger{
+
+    background:
+        var(--red-light);
+
+    color:
+        #A6403E;
+
+}
+
+
+.button-row{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:9px;
+
+}
+
+
+/* TOTAL */
+
+.total-box{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:
+        space-between;
+
+    gap:
+        16px;
+
+    margin:
+        12px
+        0
+        17px;
+
+    padding:
+        18px;
+
+    border:
+        1px solid
+        #E1CFA0;
+
+    border-radius:
+        15px;
+
+    background:
+
+        linear-gradient(
+            135deg,
+            #FFF1C3,
+            #F8DED6
+        );
+
+}
+
+
+.total-box span{
+
+    display:block;
+
+    color:
+        var(--muted);
+
+    font-size:
+        11px;
+
+}
+
+
+.total-box strong{
+
+    font-size:
+        25px;
+
+}
+
+
+/* ERROR */
+
+.alert{
+
+    display:none;
+
+    margin:
+        14px
+        0;
+
+    padding:
+        13px
+        14px;
+
+    border-radius:
+        12px;
+
+    font-size:
+        12px;
+
+    line-height:
+        1.5;
+
+}
+
+
+.alert.error{
+
+    display:block;
+
+    border:
+        1px solid
+        #E8AAA3;
+
+    background:
+        var(--red-light);
+
+    color:
+        #8F3432;
+
+}
+
+
+/* SAVING */
+
+.submit-status{
+
+    display:none;
+
+    margin-top:
+        12px;
+
+    color:
+        var(--muted);
+
+    font-size:
+        11px;
+
+}
+
+
+.submit-status.show{
+
+    display:block;
+
+}
+
+
+.spinner{
+
+    display:inline-block;
+
+    width:
+        13px;
+
+    height:
+        13px;
+
+    margin-right:
+        6px;
+
+    vertical-align:
+        -2px;
+
+    border:
+        2px solid
+        #E8D8CB;
+
+    border-top-color:
+        var(--coral);
+
+    border-radius:
+        50%;
+
+    animation:
+        spin
+        .7s
+        linear
+        infinite;
+
+}
+
+
+@keyframes spin{
+
+    to{
+
+        transform:
+            rotate(360deg);
+
+    }
+
+}
+
+
+/* CONFIRMATION */
+
+.confirmation{
+
+    display:none;
+
+    overflow:hidden;
+
+    border:
+        1px solid
+        var(--border);
+
+    border-radius:
+        21px;
+
+    background:
+        var(--cream-card);
+
+    box-shadow:
+        var(--shadow);
+
+}
+
+
+.confirmation.show{
+
+    display:block;
+
+}
+
+
+.confirm-top{
+
+    padding:
+        30px;
+
+    text-align:center;
+
+    background:
+
+        linear-gradient(
+            135deg,
+            #FFF0C5,
+            #F9DDD5 55%,
+            #DDEFEA
+        );
+
+}
+
+
+.confirm-icon{
+
+    width:
+        62px;
+
+    height:
+        62px;
+
+    display:grid;
+
+    place-items:center;
+
+    margin:
+        0
+        auto
+        12px;
+
+    border-radius:
+        50%;
+
+    background:
+        var(--teal);
+
+    color:white;
+
+    font-size:
+        28px;
+
+    font-weight:
+        900;
+
+}
+
+
+.confirm-top h2{
+
+    margin:
+        0
+        0
+        6px;
+
+    font-family:
+        Georgia,
+        serif;
+
+    font-size:
+        27px;
+
+}
+
+
+.confirm-top p{
+
+    margin:0;
+
+    color:
+        var(--muted);
+
+    font-size:
+        12px;
+
+}
+
+
+.confirm-body{
+
+    padding:
+        24px;
+
+}
+
+
+.summary-grid{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(
+            3,
+            1fr
+        );
+
+    gap:
+        10px;
+
+    margin-bottom:
+        18px;
+
+}
+
+
+.summary-box{
+
+    padding:
+        14px;
+
+    border:
+        1px solid
+        #EEE4CD;
+
+    border-radius:
+        12px;
+
+    background:
+        #FFFDF8;
+
+}
+
+
+.summary-box span{
+
+    display:block;
+
+    color:
+        var(--muted);
+
+    font-size:
+        9px;
+
+    font-weight:
+        900;
+
+    text-transform:
+        uppercase;
+
+}
+
+
+.summary-box strong{
+
+    display:block;
+
+    margin-top:
+        4px;
+
+    font-size:
+        14px;
+
+}
+
+
+.names-list{
+
+    margin:
+        14px
+        0;
+
+    padding:
+        14px
+        0;
+
+    border-top:
+        1px solid
+        var(--border);
+
+    border-bottom:
+        1px solid
+        var(--border);
+
+}
+
+
+.names-list p{
+
+    margin:
+        5px
+        0;
+
+    font-size:
+        12px;
+
+}
+
+
+/* PAYMENT */
+
+.payment-panel{
+
+    margin-top:
+        18px;
+
+    padding:
+        18px;
+
+    border:
+        1px solid
+        #D5C18E;
+
+    border-radius:
+        15px;
+
+    background:
+
+        linear-gradient(
+            135deg,
+            #FFF2C7,
+            #F7E2D9
+        );
+
+}
+
+
+.payment-panel h3{
+
+    margin:
+        0
+        0
+        6px;
+
+    font-family:
+        Georgia,
+        serif;
+
+    font-size:
+        18px;
+
+}
+
+
+.payment-panel p{
+
+    margin:
+        0
+        0
+        12px;
+
+    color:
+        var(--muted);
+
+    font-size:
+        11px;
+
+    line-height:
+        1.6;
+
+}
+
+
+.payment-button{
+
+    display:inline-block;
+
+    padding:
+        12px
+        16px;
+
+    border-radius:
+        11px;
+
+    text-decoration:none;
+
+    background:
+        var(--coral);
+
+    color:white;
+
+    font-size:
+        12px;
+
+    font-weight:
+        900;
+
+}
+
+
+.payment-button.disabled{
+
+    pointer-events:none;
+
+    background:
+        #ABA69A;
+
+}
+
+
+.privacy-note{
+
+    margin-top:
+        18px;
+
+    color:
+        var(--muted);
+
+    font-size:
+        10px;
+
+    line-height:
+        1.55;
+
+    text-align:center;
+
+}
+
+
+/* MOBILE */
+
+@media(
+    max-width:760px
+){
+
+    .shell{
+
+        width:
+            min(
+                94%,
+                980px
+            );
+
+        margin-top:
+            14px;
+
+    }
+
+
+    .install-card{
+
+        align-items:
+            flex-start;
+
+        flex-direction:
+            column;
+
+    }
+
+
+    .hero{
+
+        grid-template-columns:
+            1fr;
+
+        padding:
+            25px
+            20px;
+
+        border-radius:
+            18px;
+
+    }
+
+
+    .logo-box{
+
+        order:-1;
+
+        justify-content:
+            flex-start;
+
+    }
+
+
+    .bear-logo{
+
+        width:
+            120px;
+
+        border-radius:
+            18px;
+
+        border-width:
+            4px;
+
+    }
+
+
+    .bear-logo .small{
+
+        font-size:
+            18px;
+
+    }
+
+
+    .bear-logo .big{
+
+        font-size:
+            25px;
+
+    }
+
+
+    .bear-logo .run{
+
+        font-size:
+            20px;
+
+    }
+
+
+    .card{
+
+        padding:
+            19px;
+
+        border-radius:
+            16px;
+
+    }
+
+
+    .form-row{
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+
+    .summary-grid{
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+
+    .participant{
+
+        padding:
+            16px;
+
+    }
+
+}
+
+
+@media print{
+
+    .install-card,
+    .hero,
+    form,
+    .button-row,
+    .payment-panel{
+
+        display:none !important;
+
+    }
+
+
+    body{
+
+        background:
+            white;
+
+    }
+
+
+    .confirmation{
+
+        display:block !important;
+
+        box-shadow:none;
+
+        border:0;
+
+    }
+
+}
+
+</style>
+
+</head>
+
+
+
+<!-- =========================================================
+     SECTION 3 OF 5
+     WEBSITE / APP CONTENT
+========================================================= -->
+
+<body>
+
+
+<div
+    id="offlineBanner"
+    class="offline-banner"
+>
+
+    You are offline.
+    Connect to the internet before submitting a registration.
+
+</div>
+
+<main class="shell">
+
+<section class="hero">
+
+
+    <div class="hero-copy">
+
+
+        <div class="hero-badge">
+
+            🏃 STUDENT GOVERNMENT ASSOCIATION
+
+        </div>
+
+
+        <h1>
+
+            <span>
+                Bear Run
+            </span>
+
+            <br>
+
+            S.G.A. 5K Registration
+
+        </h1>
+
+
+        <p>
+
+            Register yourself or multiple participants
+            for Bear Run.
+
+            Complete the registration below and use
+            the GoFan payment option when the official
+            payment link becomes available.
+
+        </p>
+
+
+        <div class="hero-info">
+
+
+            <div class="info-chip">
+
+                $15 per participant
+
+            </div>
+
+
+            <div class="info-chip">
+
+                Multiple participants allowed
+
+            </div>
+
+
+            <div class="info-chip">
+
+                Google account email requested
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+
+
+    <div class="logo-box">
+
+
+        <div class="bear-logo">
+
+
+            <div class="small">
+
+                🏃
+
+            </div>
+
+
+            <div class="big">
+
+                BEAR
+
+            </div>
+
+
+            <div class="big">
+
+                RUN
+
+            </div>
+
+
+            <div class="run">
+
+                5K
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+
+</section>
+
+
+
+<form
+    id="registrationForm"
+    novalidate
+>
+
+
+<!-- PERSON REGISTERING -->
+
+<section class="card">
+
+
+    <div class="card-head">
+
+
+        <div>
+
+            <h2>
+
+                Person Completing Registration
+
+            </h2>
+
+
+            <p>
+
+                This person is the main contact
+                for this registration.
+
+            </p>
+
+        </div>
+
+
+        <div class="section-number">
+
+            1
+
+        </div>
+
+
+    </div>
+
+
+
+    <div class="form-row">
+
+
+        <div class="field">
+
+
+            <label for="registrantName">
+
+                Full Name
+
+                <span class="required">
+                    *
+                </span>
+
+            </label>
+
+
+            <input
+                id="registrantName"
+                type="text"
+                autocomplete="name"
+                required
+            >
+
+
+        </div>
+
+
+
+        <div class="field">
+
+
+            <label for="registrantEmail">
+
+                Google Account Email
+
+                <span class="required">
+                    *
+                </span>
+
+            </label>
+
+
+            <input
+                id="registrantEmail"
+                type="email"
+                autocomplete="email"
+                required
+            >
+
+
+        </div>
+
+
+    </div>
+
+
+
+    <div class="field">
+
+
+        <label for="registrantPhone">
+
+            Phone Number
+
+            <span class="required">
+                *
+            </span>
+
+        </label>
+
+
+        <input
+            id="registrantPhone"
+            type="tel"
+            autocomplete="tel"
+            required
+        >
+
+
+    </div>
+
+
+</section>
+
+
+
+<!-- PARTICIPANTS -->
+
+<section class="card">
+
+
+    <div class="card-head">
+
+
+        <div>
+
+            <h2>
+
+                Participants
+
+            </h2>
+
+
+            <p>
+
+                Add every person who will participate
+                in Bear Run.
+
+            </p>
+
+        </div>
+
+
+        <div class="section-number">
+
+            2
+
+        </div>
+
+
+    </div>
+
+
+
+    <div class="button-row">
+
+
+        <button
+            type="button"
+            id="addParticipantBtn"
+            class="secondary"
+        >
+
+            + Add Participant
+
+        </button>
+
+
+    </div>
+
+
+
+    <div id="participants"></div>
+
+
+</section>
+
+
+
+<!-- WAIVER -->
+
+<section class="card">
+
+
+    <div class="card-head">
+
+
+        <div>
+
+            <h2>
+
+                Event Waiver
+
+            </h2>
+
+
+            <p>
+
+                Please read and accept before submitting.
+
+            </p>
+
+        </div>
+
+
+        <div class="section-number">
+
+            3
+
+        </div>
+
+
+    </div>
+
+
+
+    <div class="waiver">
+
+
+        I understand that participating in a 5K
+        involves physical activity and possible risks.
+
+        I confirm that the information entered in this
+        registration is accurate and that I am authorized
+        to complete this registration for the listed
+        participant or participants.
+
+
+
+        <div class="check-row">
+
+
+            <input
+                type="checkbox"
+                id="waiverAccepted"
+                required
+            >
+
+
+            <label for="waiverAccepted">
+
+                I have read and agree
+                to the event waiver.
+
+                <span class="required">
+                    *
+                </span>
+
+            </label>
+
+
+        </div>
+
+
+    </div>
+
+
+</section>
+
+
+
+<!-- TOTAL -->
+
+<section class="card">
+
+
+    <div class="card-head">
+
+
+        <div>
+
+            <h2>
+
+                Review Total
+
+            </h2>
+
+
+            <p>
+
+                Registration is $15 per participant.
+
+            </p>
+
+        </div>
+
+
+        <div class="section-number">
+
+            4
+
+        </div>
+
+
+    </div>
+
+
+
+    <div class="total-box">
+
+
+        <div>
+
+            <span>
+
+                Participants
+
+            </span>
+
+
+            <strong id="participantCount">
+
+                1
+
+            </strong>
+
+        </div>
+
+
+
+        <div style="text-align:right">
+
+
+            <span>
+
+                Registration Total
+
+            </span>
+
+
+            <strong>
+
+                $
+
+                <span id="registrationTotal">
+
+                    15.00
+
+                </span>
+
+            </strong>
+
+
+        </div>
+
+
+    </div>
+
+
+
+    <div
+        id="errorBox"
+        class="alert"
+    ></div>
+
+
+
+    <button
+        type="submit"
+        id="submitBtn"
+        class="primary"
+    >
+
+        Submit Registration
+
+    </button>
+
+
+
+    <div
+        id="submitStatus"
+        class="submit-status"
+    >
+
+        <span class="spinner"></span>
+
+        Sending your registration…
+
+    </div>
+
+
+</section>
+
+
+
+<p class="privacy-note">
+
+    Registration information is collected
+    for event administration and emergency-contact purposes.
+
+    Payment is handled separately through GoFan.
+
+</p>
+
+
+</form>
+
+
+
+<!-- CONFIRMATION -->
+
+<section
+    id="confirmation"
+    class="confirmation"
+>
+
+
+    <div class="confirm-top">
+
+
+        <div class="confirm-icon">
+
+            ✓
+
+        </div>
+
+
+        <h2>
+
+            Registration Submitted
+
+        </h2>
+
+
+        <p>
+
+            Your Bear Run registration has been sent.
+
+        </p>
+
+
+    </div>
+
+
+
+    <div class="confirm-body">
+
+
+        <div class="summary-grid">
+
+
+            <div class="summary-box">
+
+                <span>
+
+                    Registration ID
+
+                </span>
+
+                <strong id="confirmId">
+
+                    —
+
+                </strong>
+
+            </div>
+
+
+
+            <div class="summary-box">
+
+                <span>
+
+                    Participants
+
+                </span>
+
+                <strong id="confirmCount">
+
+                    —
+
+                </strong>
+
+            </div>
+
+
+
+            <div class="summary-box">
+
+                <span>
+
+                    Total
+
+                </span>
+
+                <strong id="confirmTotal">
+
+                    —
+
+                </strong>
+
+            </div>
+
+
+        </div>
+
+
+
+        <div
+            class="names-list"
+            id="confirmNames"
+        ></div>
+
+
+
+        <div class="payment-panel">
+
+
+            <h3>
+
+                GoFan Payment
+
+            </h3>
+
+
+            <p>
+
+                Use the GoFan button below when
+                the official payment link becomes available.
+
+                After paying, keep the GoFan confirmation
+                available so it can be shown to a volunteer
+                if requested.
+
+            </p>
+
+
+
+            <a
+                id="gofanButton"
+                class="payment-button disabled"
+                href="#"
+                target="_blank"
+                rel="noopener"
+            >
+
+                GoFan Link Coming Soon
+
+            </a>
+
+
+        </div>
+
+
+
+        <div
+            class="button-row"
+            style="margin-top:18px"
+        >
+
+
+            <button
+                type="button"
+                id="printBtn"
+                class="secondary"
+            >
+
+                Print / Save Confirmation
+
+            </button>
+
+
+
+            <button
+                type="button"
+                id="anotherBtn"
+                class="secondary"
+            >
+
+                Start Another Registration
+
+            </button>
+
+
+        </div>
+
+
+    </div>
+
+
+</section>
+
+
+</main>
+
+
+
+<!-- =========================================================
+     SECTION 4 OF 5
+     APP SETTINGS + HELPER FUNCTIONS
+========================================================= -->
+
+<script>
+
+(() => {
+
+"use strict";
+
+
+/*
+=========================================================
+GOOGLE SHEETS
+=========================================================
+*/
+
+
+const GOOGLE_SHEET_WEB_APP_URL =
+
+"https://script.google.com/macros/s/AKfycbxh-hUPSYB-7wWgdDM77akRCrXdytpPjmhoervj_5mn_B9X0awOUyCo-tJ3S5gQZ9qC/exec";
+
+
+
+/*
+=========================================================
+GOFAN LINK
+
+LEAVE EMPTY FOR NOW.
+
+When you get the real GoFan link,
+put it between the quotation marks.
+
+Example:
+
+const GOFAN_URL =
+"https://gofan.co/your-event-link";
+=========================================================
+*/
+
+
+const GOFAN_URL = "";
+
+
+
+const PRICE_PER_PARTICIPANT =
+    15;
+
+
+
+const form =
+    document.getElementById(
+        "registrationForm"
+    );
+
+
+const participantsContainer =
+    document.getElementById(
+        "participants"
+    );
+
+
+const participantCount =
+    document.getElementById(
+        "participantCount"
+    );
+
+
+const registrationTotal =
+    document.getElementById(
+        "registrationTotal"
+    );
+
+
+const errorBox =
+    document.getElementById(
+        "errorBox"
+    );
+
+
+const submitButton =
+    document.getElementById(
+        "submitBtn"
+    );
+
+
+const submitStatus =
+    document.getElementById(
+        "submitStatus"
+    );
+
+
+const confirmation =
+    document.getElementById(
+        "confirmation"
+    );
+
+
+const offlineBanner =
+    document.getElementById(
+        "offlineBanner"
+    );
+
+
+
+function escapeHtml(value){
+
+    const div =
+        document.createElement(
+            "div"
+        );
+
+    div.textContent =
+        value ?? "";
+
+    return div.innerHTML;
+
+}
+
+
+
+function formatMoney(value){
+
+    return Number(
+        value || 0
+    ).toLocaleString(
+
+        "en-US",
+
+        {
+
+            style:
+                "currency",
+
+            currency:
+                "USD"
+
+        }
+
+    );
+
+}
+
+
+
+function createRegistrationId(){
+
+    const now =
+        new Date();
+
+
+    const datePart =
+
+        now
+            .getFullYear()
+            .toString()
+            .slice(-2)
+
+        +
+
+        String(
+            now.getMonth() + 1
+        )
+        .padStart(
+            2,
+            "0"
+        )
+
+        +
+
+        String(
+            now.getDate()
+        )
+        .padStart(
+            2,
+            "0"
+        );
+
+
+    const randomPart =
+
+        Math.random()
+            .toString(36)
+            .slice(2,7)
+            .toUpperCase();
+
+
+    return (
+
+        "5K-"
+
+        +
+
+        datePart
+
+        +
+
+        "-"
+
+        +
+
+        randomPart
+
+    );
+
+}
+
+
+
+function showError(message){
+
+    errorBox.className =
+        "alert error";
+
+
+    errorBox.textContent =
+        message;
+
+
+    errorBox.style.display =
+        "block";
+
+
+    errorBox.scrollIntoView({
+
+        behavior:
+            "smooth",
+
+        block:
+            "center"
+
+    });
+
+}
+
+
+
+function clearError(){
+
+    errorBox.style.display =
+        "none";
+
+
+    errorBox.textContent =
+        "";
+
+}
+
+
+
+function updateTotal(){
+
+    const count =
+
+        document
+            .querySelectorAll(
+                ".participant"
+            )
+            .length;
+
+
+    participantCount.textContent =
+        count;
+
+
+    registrationTotal.textContent =
+
+        (
+            count
+
+            *
+
+            PRICE_PER_PARTICIPANT
+        )
+        .toFixed(
+            2
+        );
+
+}
+
+
+
+function renumberParticipants(){
+
+    const cards =
+
+        document
+            .querySelectorAll(
+                ".participant"
+            );
+
+
+    cards.forEach(
+
+        (
+            card,
+            index
+        ) => {
+
+
+            card
+                .querySelector(
+                    ".participant-title"
+                )
+                .textContent =
+
+                "Participant "
+
+                +
+
+                (
+                    index + 1
+                );
+
+        }
+
+    );
+
+}
+
+
+
+/*
+=========================================================
+SECTION 5 OF 5
+PARTICIPANTS + RULES + GOOGLE SHEETS + CONFIRMATION
+=========================================================
+*/
+
+
+function createParticipant(){
+
+    const card =
+        document.createElement(
+            "div"
+        );
+
+
+    card.className =
+        "participant";
+
+
+    card.innerHTML = `
+
+
+        <div class="participant-top">
+
+
+            <h3 class="participant-title">
+
+                Participant
+
+            </h3>
+
+
+            <button
+                type="button"
+                class="danger remove-participant"
+            >
+
+                Remove
+
+            </button>
+
+
+        </div>
+
+
+
+        <div class="form-row">
+
+
+            <div class="field">
+
+
+                <label>
+
+                    First Name
+
+                    <span class="required">
+                        *
+                    </span>
+
+                </label>
+
+
+                <input
+                    class="first-name"
+                    type="text"
+                    required
+                >
+
+
+            </div>
+
+
+
+            <div class="field">
+
+
+                <label>
+
+                    Last Name
+
+                    <span class="required">
+                        *
+                    </span>
+
+                </label>
+
+
+                <input
+                    class="last-name"
+                    type="text"
+                    required
+                >
+
+
+            </div>
+
+
+        </div>
+
+
+
+        <div class="form-row">
+
+
+            <div class="field">
+
+
+                <label>
+
+                    Email
+
+                    <span class="required">
+                        *
+                    </span>
+
+                </label>
+
+
+                <input
+                    class="participant-email"
+                    type="email"
+                    required
+                >
+
+
+            </div>
+
+
+
+            <div class="field">
+
+
+                <label>
+
+                    Phone Number
+
+                    <span class="required">
+                        *
+                    </span>
+
+                </label>
+
+
+                <input
+                    class="participant-phone"
+                    type="tel"
+                    required
+                >
+
+
+            </div>
+
+
+        </div>
+
+
+
+        <div class="field">
+
+
+            <label>
+
+                Age
+
+                <span class="required">
+                    *
+                </span>
+
+            </label>
+
+
+            <input
+                class="participant-age"
+                type="number"
+                min="0"
+                max="120"
+                required
+            >
+
+
+        </div>
+
+
+
+        <div class="minor-consent">
+
+
+            <strong>
+
+                Parent / Guardian Consent Required
+
+            </strong>
+
+
+            <p>
+
+                Because this participant is age 17
+                or younger, a parent or legal guardian
+                must give permission for the participant
+                to take part in Bear Run.
+
+            </p>
+
+
+            <div class="check-row">
+
+
+                <input
+                    type="checkbox"
+                    class="minor-consent-checkbox"
+                >
+
+
+                <label>
+
+                    I confirm that the participant's
+                    parent or legal guardian has given
+                    permission for this participant
+                    to take part in the S.G.A. 5K.
+
+                    <span class="required">
+                        *
+                    </span>
+
+                </label>
+
+
+            </div>
+
+
+        </div>
+
+
+
+        <div class="field">
+
+
+            <label>
+
+                Are you currently a
+                Cypress Creek High School student?
+
+                <span class="required">
+                    *
+                </span>
+
+            </label>
+
+
+            <select
+                class="student-status"
+                required
+            >
+
+
+                <option value="">
+
+                    Select an option
+
+                </option>
+
+
+                <option value="yes">
+
+                    Yes
+
+                </option>
+
+
+                <option value="no">
+
+                    No
+
+                </option>
+
+
+            </select>
+
+
+        </div>
+
+
+
+        <div class="student-fields">
+
+
+            <div class="form-row">
+
+
+                <div class="field">
+
+
+                    <label>
+
+                        Grade
+
+                        <span class="required">
+                            *
+                        </span>
+
+                    </label>
+
+
+                    <select class="grade">
+
+
+                        <option value="">
+
+                            Select grade
+
+                        </option>
+
+
+                        <option value="9">
+
+                            9th Grade
+
+                        </option>
+
+
+                        <option value="10">
+
+                            10th Grade
+
+                        </option>
+
+
+                        <option value="11">
+
+                            11th Grade
+
+                        </option>
+
+
+                        <option value="12">
+
+                            12th Grade
+
+                        </option>
+
+
+                    </select>
+
+
+                </div>
+
+
+
+                <div class="field">
+
+
+                    <label>
+
+                        Student ID
+
+                        <span class="required">
+                            *
+                        </span>
+
+                    </label>
+
+
+                    <input
+                        class="student-id"
+                        type="text"
+                    >
+
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+
+
+        <div class="parent-info">
+
+
+            <div class="subsection">
+
+
+                <h4>
+
+                    Parent / Guardian Information
+
+                </h4>
+
+
+                <div class="form-row">
+
+
+                    <div class="field">
+
+
+                        <label>
+
+                            Parent / Guardian Name
+
+                            <span class="required">
+                                *
+                            </span>
+
+                        </label>
+
+
+                        <input
+                            class="parent-name"
+                            type="text"
+                        >
+
+
+                    </div>
+
+
+
+                    <div class="field">
+
+
+                        <label>
+
+                            Parent / Guardian Phone
+
+                            <span class="required">
+                                *
+                            </span>
+
+                        </label>
+
+
+                        <input
+                            class="parent-phone"
+                            type="tel"
+                        >
+
+
+                    </div>
+
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+
+
+        <div class="subsection">
+
+
+            <h4>
+
+                Emergency Contact 1
+
+            </h4>
+
+
+            <div class="form-row">
+
+
+                <div class="field">
+
+
+                    <label>
+
+                        Name
+
+                        <span class="required">
+                            *
+                        </span>
+
+                    </label>
+
+
+                    <input
+                        class="emergency-one-name"
+                        type="text"
+                        required
+                    >
+
+
+                </div>
+
+
+
+                <div class="field">
+
+
+                    <label>
+
+                        Phone Number
+
+                        <span class="required">
+                            *
+                        </span>
+
+                    </label>
+
+
+                    <input
+                        class="emergency-one-phone"
+                        type="tel"
+                        required
+                    >
+
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+
+
+        <div class="second-emergency">
+
+
+            <div class="subsection">
+
+
+                <h4>
+
+                    Emergency Contact 2
+                    — Required for Age 15 or Younger
+
+                </h4>
+
+
+                <div class="form-row">
+
+
+                    <div class="field">
+
+
+                        <label>
+
+                            Name
+
+                            <span class="required">
+                                *
+                            </span>
+
+                        </label>
+
+
+                        <input
+                            class="emergency-two-name"
+                            type="text"
+                        >
+
+
+                    </div>
+
+
+
+                    <div class="field">
+
+
+                        <label>
+
+                            Phone Number
+
+                            <span class="required">
+                                *
+                            </span>
+
+                        </label>
+
+
+                        <input
+                            class="emergency-two-phone"
+                            type="tel"
+                        >
+
+
+                    </div>
+
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+
+
+        <div class="young-child-note">
+
+
+            <strong>
+
+                Additional waiver required.
+
+            </strong>
+
+
+            <br>
+
+
+            Participants age 5 or younger must
+            complete the additional school-provided
+            PDF waiver.
+
+            The school can provide this form
+            separately when it becomes available.
+
+
+        </div>
+
+
+    `;
+
+
+    participantsContainer
+        .appendChild(
+            card
+        );
+
+
+    setupParticipant(
+        card
+    );
+
+
+    renumberParticipants();
+
+
+    updateTotal();
+
+}
+
+
+
+function setupParticipant(card){
+
+    const ageInput =
+        card.querySelector(
+            ".participant-age"
+        );
+
+
+    const minorConsent =
+        card.querySelector(
+            ".minor-consent"
+        );
+
+
+    const minorConsentCheckbox =
+        card.querySelector(
+            ".minor-consent-checkbox"
+        );
+
+
+    const parentInfo =
+        card.querySelector(
+            ".parent-info"
+        );
+
+
+    const parentName =
+        card.querySelector(
+            ".parent-name"
+        );
+
+
+    const parentPhone =
+        card.querySelector(
+            ".parent-phone"
+        );
+
+
+    const studentStatus =
+        card.querySelector(
+            ".student-status"
+        );
+
+
+    const studentFields =
+        card.querySelector(
+            ".student-fields"
+        );
+
+
+    const grade =
+        card.querySelector(
+            ".grade"
+        );
+
+
+    const studentId =
+        card.querySelector(
+            ".student-id"
+        );
+
+
+    const secondEmergency =
+        card.querySelector(
+            ".second-emergency"
+        );
+
+
+    const emergencyTwoName =
+        card.querySelector(
+            ".emergency-two-name"
+        );
+
+
+    const emergencyTwoPhone =
+        card.querySelector(
+            ".emergency-two-phone"
+        );
+
+
+    const youngChildNote =
+        card.querySelector(
+            ".young-child-note"
+        );
+
+
+    const removeButton =
+        card.querySelector(
+            ".remove-participant"
+        );
+
+
+
+    function updateStudentFields(){
+
+        const student =
+            studentStatus.value
+            ===
+            "yes";
+
+
+        studentFields.style.display =
+            student
+            ?
+            "block"
+            :
+            "none";
+
+
+        grade.required =
+            student;
+
+
+        studentId.required =
+            student;
+
+
+        if(
+            !student
+        ){
+
+            grade.value =
+                "";
+
+
+            studentId.value =
+                "";
+
+        }
+
+    }
+
+
+
+    function updateAgeRules(){
+
+        const ageExists =
+            ageInput.value
+            !==
+            "";
+
+
+        const age =
+            Number(
+                ageInput.value
+            );
+
+
+        /*
+        17 OR YOUNGER
+        */
+
+        const needsParent =
+            ageExists
+            &&
+            age <= 17;
+
+
+        minorConsent.style.display =
+            needsParent
+            ?
+            "block"
+            :
+            "none";
+
+
+        parentInfo.style.display =
+            needsParent
+            ?
+            "block"
+            :
+            "none";
+
+
+        minorConsentCheckbox.required =
+            needsParent;
+
+
+        parentName.required =
+            needsParent;
+
+
+        parentPhone.required =
+            needsParent;
+
+
+        if(
+            !needsParent
+        ){
+
+            minorConsentCheckbox.checked =
+                false;
+
+
+            parentName.value =
+                "";
+
+
+            parentPhone.value =
+                "";
+
+        }
+
+
+
+        /*
+        15 OR YOUNGER
+        */
+
+        const needsSecondEmergency =
+            ageExists
+            &&
+            age <= 15;
+
+
+        secondEmergency.style.display =
+            needsSecondEmergency
+            ?
+            "block"
+            :
+            "none";
+
+
+        emergencyTwoName.required =
+            needsSecondEmergency;
+
+
+        emergencyTwoPhone.required =
+            needsSecondEmergency;
+
+
+        if(
+            !needsSecondEmergency
+        ){
+
+            emergencyTwoName.value =
+                "";
+
+
+            emergencyTwoPhone.value =
+                "";
+
+        }
+
+
+
+        /*
+        AGE 5 OR YOUNGER
+        */
+
+        const needsChildWaiver =
+            ageExists
+            &&
+            age <= 5;
+
+
+        youngChildNote.style.display =
+            needsChildWaiver
+            ?
+            "block"
+            :
+            "none";
+
+    }
+
+
+
+    studentStatus
+        .addEventListener(
+
+            "change",
+
+            updateStudentFields
+
+        );
+
+
+    ageInput
+        .addEventListener(
+
+            "input",
+
+            updateAgeRules
+
+        );
+
+
+    removeButton
+        .addEventListener(
+
+            "click",
+
+            () => {
+
+
+                const cards =
+
+                    document
+                        .querySelectorAll(
+                            ".participant"
+                        );
+
+
+                if(
+                    cards.length
+                    ===
+                    1
+                ){
+
+                    showError(
+
+                        "At least one participant is required."
+
+                    );
+
+
+                    return;
+
+                }
+
+
+                card.remove();
+
+
+                renumberParticipants();
+
+
+                updateTotal();
+
+
+                clearError();
+
+            }
+
+        );
+
+
+    updateStudentFields();
+
+
+    updateAgeRules();
+
+}
+
+
+
+function getParticipantData(card){
+
+    return {
+
+
+        firstName:
+
+            card
+                .querySelector(
+                    ".first-name"
+                )
+                .value
+                .trim(),
+
+
+
+        lastName:
+
+            card
+                .querySelector(
+                    ".last-name"
+                )
+                .value
+                .trim(),
+
+
+
+        email:
+
+            card
+                .querySelector(
+                    ".participant-email"
+                )
+                .value
+                .trim(),
+
+
+
+        phone:
+
+            card
+                .querySelector(
+                    ".participant-phone"
+                )
+                .value
+                .trim(),
+
+
+
+        age:
+
+            Number(
+
+                card
+                    .querySelector(
+                        ".participant-age"
+                    )
+                    .value
+
+            ),
+
+
+
+        parentGuardianConsent:
+
+            card
+                .querySelector(
+                    ".minor-consent-checkbox"
+                )
+                .checked,
+
+
+
+        isStudent:
+
+            card
+                .querySelector(
+                    ".student-status"
+                )
+                .value
+
+            ===
+
+            "yes",
+
+
+
+        grade:
+
+            card
+                .querySelector(
+                    ".grade"
+                )
+                .value,
+
+
+
+        studentId:
+
+            card
+                .querySelector(
+                    ".student-id"
+                )
+                .value
+                .trim(),
+
+
+
+        parentGuardian:{
+
+            name:
+
+                card
+                    .querySelector(
+                        ".parent-name"
+                    )
+                    .value
+                    .trim(),
+
+
+            phone:
+
+                card
+                    .querySelector(
+                        ".parent-phone"
+                    )
+                    .value
+                    .trim()
+
+        },
+
+
+
+        emergencyContactOne:{
+
+            name:
+
+                card
+                    .querySelector(
+                        ".emergency-one-name"
+                    )
+                    .value
+                    .trim(),
+
+
+            phone:
+
+                card
+                    .querySelector(
+                        ".emergency-one-phone"
+                    )
+                    .value
+                    .trim()
+
+        },
+
+
+
+        emergencyContactTwo:{
+
+            name:
+
+                card
+                    .querySelector(
+                        ".emergency-two-name"
+                    )
+                    .value
+                    .trim(),
+
+
+            phone:
+
+                card
+                    .querySelector(
+                        ".emergency-two-phone"
+                    )
+                    .value
+                    .trim()
+
+        },
+
+
+
+        requiresAdditionalYoungChildWaiver:
+
+            Number(
+
+                card
+                    .querySelector(
+                        ".participant-age"
+                    )
+                    .value
+
+            )
+
+            <=
+
+            5
+
+    };
+
+}
+
+
+
+function collectRegistration(){
+
+    const participants =
+
+        Array
+            .from(
+
+                document
+                    .querySelectorAll(
+                        ".participant"
+                    )
+
+            )
+            .map(
+                getParticipantData
+            );
+
+
+    return {
+
+
+        registrationId:
+
+            createRegistrationId(),
+
+
+
+        submittedAt:
+
+            new Date()
+                .toISOString(),
+
+
+
+        eventName:
+
+            "Bear Run – S.G.A. 5K",
+
+
+
+        registrant:{
+
+            name:
+
+                document
+                    .getElementById(
+                        "registrantName"
+                    )
+                    .value
+                    .trim(),
+
+
+            email:
+
+                document
+                    .getElementById(
+                        "registrantEmail"
+                    )
+                    .value
+                    .trim(),
+
+
+            phone:
+
+                document
+                    .getElementById(
+                        "registrantPhone"
+                    )
+                    .value
+                    .trim()
+
+        },
+
+
+
+        participants:
+
+            participants,
+
+
+
+        participantCount:
+
+            participants.length,
+
+
+
+        pricePerParticipant:
+
+            PRICE_PER_PARTICIPANT,
+
+
+
+        total:
+
+            participants.length
+
+            *
+
+            PRICE_PER_PARTICIPANT,
+
+
+
+        waiverAccepted:
+
+            document
+                .getElementById(
+                    "waiverAccepted"
+                )
+                .checked,
+
+
+
+        paymentMethod:
+
+            "GoFan",
+
+
+
+        paymentVerified:
+
+            false
+
+    };
+
+}
+
+
+
+function validateRegistration(data){
+
+    if(
+        !data.waiverAccepted
+    ){
+
+        return (
+
+            "You must agree to the event waiver before submitting."
+
+        );
+
+    }
+
+
+
+    for(
+        const participant
+        of
+        data.participants
+    ){
+
+
+        if(
+
+            !Number.isFinite(
+                participant.age
+            )
+
+            ||
+
+            participant.age < 0
+
+            ||
+
+            participant.age > 120
+
+        ){
+
+            return (
+
+                "Please enter a valid age for "
+
+                +
+
+                participant.firstName
+
+                +
+
+                "."
+
+            );
+
+        }
+
+
+
+        if(
+            participant.age <= 17
+        ){
+
+
+            if(
+                !participant.parentGuardianConsent
+            ){
+
+                return (
+
+                    "Parent or guardian consent is required for "
+
+                    +
+
+                    participant.firstName
+
+                    +
+
+                    " because this participant is age 17 or younger."
+
+                );
+
+            }
+
+
+
+            if(
+
+                !participant.parentGuardian.name
+
+                ||
+
+                !participant.parentGuardian.phone
+
+            ){
+
+                return (
+
+                    "Parent or guardian information is required for "
+
+                    +
+
+                    participant.firstName
+
+                    +
+
+                    " because this participant is age 17 or younger."
+
+                );
+
+            }
+
+        }
+
+
+
+        if(
+
+            participant.isStudent
+
+            &&
+
+            (
+                !participant.grade
+
+                ||
+
+                !participant.studentId
+            )
+
+        ){
+
+            return (
+
+                "Please enter the grade and student ID for "
+
+                +
+
+                participant.firstName
+
+                +
+
+                "."
+
+            );
+
+        }
+
+
+
+        if(
+
+            participant.age <= 15
+
+            &&
+
+            (
+                !participant
+                    .emergencyContactTwo
+                    .name
+
+                ||
+
+                !participant
+                    .emergencyContactTwo
+                    .phone
+            )
+
+        ){
+
+            return (
+
+                participant.firstName
+
+                +
+
+                " is age 15 or younger and needs a second emergency contact."
+
+            );
+
+        }
+
+    }
+
+
+    return "";
+
+}
+
+
+
+async function sendToGoogleSheet(data){
+
+    await fetch(
+
+        GOOGLE_SHEET_WEB_APP_URL,
+
+        {
+
+            method:
+                "POST",
+
+            mode:
+                "no-cors",
+
+            cache:
+                "no-store",
+
+            headers:{
+
+                "Content-Type":
+                    "text/plain;charset=utf-8"
+
+            },
+
+            body:
+
+                JSON.stringify(
+                    data
+                )
+
+        }
+
+    );
+
+}
+
+
+
+function showConfirmation(data){
+
+    document
+        .getElementById(
+            "confirmId"
+        )
+        .textContent =
+
+        data.registrationId;
+
+
+
+    document
+        .getElementById(
+            "confirmCount"
+        )
+        .textContent =
+
+        data.participantCount;
+
+
+
+    document
+        .getElementById(
+            "confirmTotal"
+        )
+        .textContent =
+
+        formatMoney(
+            data.total
+        );
+
+
+
+    document
+        .getElementById(
+            "confirmNames"
+        )
+        .innerHTML =
+
+        "<strong>Registered Participants</strong>"
+
+        +
+
+        data.participants
+            .map(
+
+                participant =>
+
+                `
+
+                <p>
+
+                    ${escapeHtml(
+                        participant.firstName
+                    )}
+
+                    ${escapeHtml(
+                        participant.lastName
+                    )}
+
+                </p>
+
+                `
+
+            )
+            .join("");
+
+
+
+    const gofanButton =
+
+        document
+            .getElementById(
+                "gofanButton"
+            );
+
+
+
+    if(
+
+        GOFAN_URL
+
+        &&
+
+        /^https?:\/\//i
+            .test(
+                GOFAN_URL
+            )
+
+    ){
+
+        gofanButton.href =
+            GOFAN_URL;
+
+
+        gofanButton.textContent =
+            "Pay with GoFan";
+
+
+        gofanButton
+            .classList
+            .remove(
+                "disabled"
+            );
+
+    }
+
+    else{
+
+
+        gofanButton.href =
+            "#";
+
+
+        gofanButton.textContent =
+            "GoFan Link Coming Soon";
+
+
+        gofanButton
+            .classList
+            .add(
+                "disabled"
+            );
+
+    }
+
+
+
+    form.style.display =
+        "none";
+
+
+    confirmation
+        .classList
+        .add(
+            "show"
+        );
+
+
+    window.scrollTo({
+
+        top:
+            0,
+
+        behavior:
+            "smooth"
+
+    });
+
+}
+
+
+
+document
+    .getElementById(
+        "addParticipantBtn"
+    )
+    .addEventListener(
+
+        "click",
+
+        createParticipant
+
+    );
+
+
+
+form
+    .addEventListener(
+
+        "submit",
+
+        async event => {
+
+
+            event.preventDefault();
+
+
+            clearError();
+
+
+
+            if(
+                !navigator.onLine
+            ){
+
+                showError(
+
+                    "You are offline. Connect to the internet before submitting the registration."
+
+                );
+
+
+                return;
+
+            }
+
+
+
+            if(
+                !form.checkValidity()
+            ){
+
+                form.reportValidity();
+
+
+                return;
+
+            }
+
+
+
+            const data =
+
+                collectRegistration();
+
+
+
+            const validationError =
+
+                validateRegistration(
+                    data
+                );
+
+
+
+            if(
+                validationError
+            ){
+
+                showError(
+                    validationError
+                );
+
+
+                return;
+
+            }
+
+
+
+            submitButton.disabled =
+                true;
+
+
+            submitStatus
+                .classList
+                .add(
+                    "show"
+                );
+
+
+
+            try{
+
+
+                await sendToGoogleSheet(
+                    data
+                );
+
+
+                showConfirmation(
+                    data
+                );
+
+
+            }
+
+            catch(error){
+
+
+                console.error(
+                    error
+                );
+
+
+                showError(
+
+                    "The registration could not be sent. Please check your internet connection and try again."
+
+                );
+
+
+            }
+
+            finally{
+
+
+                submitButton.disabled =
+                    false;
+
+
+                submitStatus
+                    .classList
+                    .remove(
+                        "show"
+                    );
+
+            }
+
+        }
+
+    );
+
+
+
+document
+    .getElementById(
+        "printBtn"
+    )
+    .addEventListener(
+
+        "click",
+
+        () => {
+
+            window.print();
+
+        }
+
+    );
+
+
+
+document
+    .getElementById(
+        "anotherBtn"
+    )
+    .addEventListener(
+
+        "click",
+
+        () => {
+
+            window.location.reload();
+
+        }
+
+    );
+
+/*
+ONLINE / OFFLINE STATUS
+*/
+
+
+function updateOnlineStatus(){
+
+    offlineBanner
+        .classList
+        .toggle(
+
+            "show",
+
+            !navigator.onLine
+
+        );
+
+}
+
+
+window
+    .addEventListener(
+
+        "online",
+
+        updateOnlineStatus
+
+    );
+
+
+window
+    .addEventListener(
+
+        "offline",
+
+        updateOnlineStatus
+
+    );
+
+
+updateOnlineStatus();
+
+
+
+/*
+START WITH ONE PARTICIPANT
+*/
+
+
+createParticipant();
+
+
+})();
+
+</script>
+
+
+</body>
+
+</html>
