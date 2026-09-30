@@ -1,11 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<!-- =========================================================
-     SECTION 1 OF 5
-     APP SETTINGS + HEAD
-========================================================= -->
-
 <head>
 
 <meta charset="UTF-8">
@@ -15,9 +10,7 @@
     content="width=device-width, initial-scale=1.0, viewport-fit=cover"
 >
 
-<title>
-    Bear Run – S.G.A. 5K Registration
-</title>
+<title>Bear Run – S.G.A. 5K Registration</title>
 
 <meta
     name="description"
@@ -27,21 +20,6 @@
 <meta
     name="theme-color"
     content="#EA816E"
->
-
-<link
-    rel="manifest"
-    href="./manifest.json"
->
-
-<link
-    rel="apple-touch-icon"
-    href="./bear-run-icon.png"
->
-
-<meta
-    name="mobile-web-app-capable"
-    content="yes"
 >
 
 <meta
@@ -59,18 +37,27 @@
     content="SGA 5K"
 >
 
-<!-- Simple built-in browser icon -->
+<meta
+    name="mobile-web-app-capable"
+    content="yes"
+>
+
+<link
+    rel="manifest"
+    href="./manifest.json"
+>
+
+<link
+    rel="apple-touch-icon"
+    href="./bear-run-icon.png"
+>
 
 <link
     rel="icon"
-    href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%23FAE4A0'/%3E%3Ctext x='50' y='46' font-size='25' text-anchor='middle' font-family='Arial' font-weight='bold' fill='%23EA816E'%3EBEAR%3C/text%3E%3Ctext x='50' y='73' font-size='27' text-anchor='middle' font-family='Arial' font-weight='bold' fill='%232A2A2E'%3E5K%3C/text%3E%3C/svg%3E"
+    type="image/png"
+    href="./bear-run-icon.png"
 >
 
-
-<!-- =========================================================
-     SECTION 2 OF 5
-     DESIGN / CSS
-========================================================= -->
 
 <style>
 
@@ -85,20 +72,20 @@
     --coral-light:#FCE2DA;
 
     --charcoal:#29292D;
-    --charcoal-light:#44444A;
+    --charcoal-light:#3A3A41;
 
     --teal:#2F7C83;
-    --teal-dark:#245E64;
-    --teal-light:#E0F0ED;
+    --teal-dark:#235D63;
+    --teal-light:#DFF1EE;
 
     --navy:#324F68;
 
     --red:#B74947;
     --red-light:#FBE5E2;
 
-    --muted:#706B63;
+    --muted:#716B63;
 
-    --border:#E5D9B8;
+    --border:#E3D5AF;
 
     --white:#FFFFFF;
 
@@ -108,8 +95,6 @@
 
 }
 
-
-/* RESET */
 
 *{
     box-sizing:border-box;
@@ -139,13 +124,13 @@ body{
 
         radial-gradient(
             circle at 5% 0%,
-            rgba(234,129,110,.14),
+            rgba(234,129,110,.13),
             transparent 28rem
         ),
 
         radial-gradient(
             circle at 98% 15%,
-            rgba(47,124,131,.11),
+            rgba(47,124,131,.10),
             transparent 30rem
         ),
 
@@ -157,9 +142,7 @@ body{
 button,
 input,
 select{
-
     font:inherit;
-
 }
 
 
@@ -170,11 +153,7 @@ button{
 
 .shell{
 
-    width:
-        min(
-            980px,
-            92%
-        );
+    width:min(980px,92%);
 
     margin:
         28px
@@ -184,7 +163,7 @@ button{
 }
 
 
-/* OFFLINE */
+/* OFFLINE WARNING */
 
 .offline-banner{
 
@@ -202,14 +181,14 @@ button{
 
     text-align:center;
 
+    color:white;
+
     background:
         var(--red);
 
-    color:white;
-
     font-size:12px;
 
-    font-weight:bold;
+    font-weight:800;
 
 }
 
@@ -219,123 +198,33 @@ button{
 }
 
 
-/* INSTALL CARD */
-
-.install-card{
-
-    display:flex;
-
-    justify-content:
-        space-between;
-
-    align-items:center;
-
-    gap:16px;
-
-    margin-bottom:
-        18px;
-
-    padding:
-        15px
-        17px;
-
-    border:
-        1px solid
-        #DCCB99;
-
-    border-radius:
-        16px;
-
-    background:
-        #FFF5CF;
-
-    box-shadow:
-        0 8px 24px
-        rgba(42,42,46,.06);
-
-}
-
-
-.install-card strong{
-
-    display:block;
-
-    margin-bottom:3px;
-
-    font-size:13px;
-
-}
-
-
-.install-card span{
-
-    display:block;
-
-    color:
-        var(--muted);
-
-    font-size:11px;
-
-    line-height:1.5;
-
-}
-
-
-.install-help{
-
-    display:none;
-
-    margin-top:
-        10px;
-
-    padding:
-        11px
-        12px;
-
-    border-radius:
-        11px;
-
-    background:
-        rgba(255,255,255,.65);
-
-    font-size:11px;
-
-    line-height:1.6;
-
-}
-
-
-.install-help.show{
-    display:block;
-}
-
-
 /* HERO */
 
 .hero{
-
-    display:grid;
-
-    grid-template-columns:
-        1fr
-        230px;
-
-    gap:28px;
-
-    align-items:center;
 
     position:relative;
 
     overflow:hidden;
 
-    padding:
-        35px;
+    display:grid;
+
+    grid-template-columns:
+        1fr
+        245px;
+
+    gap:
+        30px;
+
+    align-items:center;
 
     margin-bottom:
         22px;
 
+    padding:
+        36px;
+
     border-radius:
-        24px;
+        25px;
 
     color:
         var(--cream-light);
@@ -345,7 +234,7 @@ button{
         linear-gradient(
             135deg,
             #29292D 0%,
-            #343439 58%,
+            #34343A 58%,
             #324F68 100%
         );
 
@@ -363,18 +252,18 @@ button{
 
     position:absolute;
 
-    width:300px;
+    width:320px;
 
-    height:300px;
+    height:320px;
 
-    right:-120px;
+    right:-125px;
 
-    top:-120px;
+    top:-135px;
 
     border-radius:50%;
 
     background:
-        rgba(234,129,110,.12);
+        rgba(234,129,110,.13);
 
 }
 
@@ -396,34 +285,34 @@ button{
 
     gap:7px;
 
-    padding:
-        7px
-        11px;
-
     margin-bottom:
-        14px;
+        15px;
+
+    padding:
+        8px
+        12px;
 
     border:
         1px solid
-        rgba(250,228,160,.30);
+        rgba(250,228,160,.32);
 
     border-radius:
         999px;
 
-    background:
-        rgba(250,228,160,.08);
-
     color:
         var(--cream);
+
+    background:
+        rgba(250,228,160,.08);
 
     font-size:
         11px;
 
     font-weight:
-        800;
+        900;
 
     letter-spacing:
-        .4px;
+        .35px;
 
 }
 
@@ -439,18 +328,18 @@ button{
 
     font-size:
         clamp(
-            31px,
+            34px,
             5vw,
-            49px
+            51px
         );
 
     line-height:
-        1.04;
+        1.02;
 
 }
 
 
-.hero h1 span{
+.hero h1 .bear{
 
     color:
         var(--coral);
@@ -464,7 +353,7 @@ button{
         650px;
 
     margin:
-        13px
+        15px
         0
         0;
 
@@ -472,7 +361,7 @@ button{
         #F8F0D7;
 
     line-height:
-        1.6;
+        1.65;
 
 }
 
@@ -483,10 +372,11 @@ button{
 
     flex-wrap:wrap;
 
-    gap:9px;
+    gap:
+        9px;
 
     margin-top:
-        20px;
+        21px;
 
 }
 
@@ -499,27 +389,27 @@ button{
 
     border:
         1px solid
-        rgba(250,228,160,.22);
+        rgba(250,228,160,.24);
 
     border-radius:
         11px;
 
-    background:
-        rgba(250,228,160,.09);
-
     color:
         #FFF7DB;
+
+    background:
+        rgba(250,228,160,.09);
 
     font-size:
         12px;
 
     font-weight:
-        800;
+        900;
 
 }
 
 
-/* BEAR RUN LOGO */
+/* REAL BEAR RUN LOGO */
 
 .logo-box{
 
@@ -536,90 +426,30 @@ button{
 }
 
 
-.bear-logo{
+.bear-run-photo{
+
+    display:block;
 
     width:
-        210px;
+        220px;
 
-    aspect-ratio:
-        1;
+    height:
+        220px;
 
-    display:flex;
-
-    flex-direction:column;
-
-    align-items:center;
-
-    justify-content:center;
+    object-fit:
+        cover;
 
     border:
         6px solid
         var(--cream);
 
     border-radius:
-        26px;
-
-    background:
-        var(--cream);
+        28px;
 
     box-shadow:
 
         0 15px 35px
         rgba(0,0,0,.25);
-
-    text-align:center;
-
-}
-
-
-.bear-logo .small{
-
-    color:
-        var(--teal);
-
-    font-size:
-        31px;
-
-    font-weight:
-        900;
-
-}
-
-
-.bear-logo .big{
-
-    margin-top:
-        3px;
-
-    color:
-        var(--coral);
-
-    font-family:
-        Georgia,
-        serif;
-
-    font-size:
-        42px;
-
-    font-weight:
-        bold;
-
-    line-height:
-        .9;
-
-}
-
-
-.bear-logo .run{
-
-    margin-top:
-        8px;
-
-    color:
-        var(--charcoal);
-
-    font-size:
-        33px;
 
 }
 
@@ -660,7 +490,8 @@ button{
     align-items:
         flex-start;
 
-    gap:18px;
+    gap:
+        18px;
 
     margin-bottom:
         18px;
@@ -677,6 +508,7 @@ button{
 
     font-family:
         Georgia,
+        "Times New Roman",
         serif;
 
     font-size:
@@ -721,10 +553,10 @@ button{
     border-radius:
         11px;
 
+    color:white;
+
     background:
         var(--coral);
-
-    color:white;
 
     font-size:
         13px;
@@ -858,7 +690,8 @@ button{
 
     align-items:center;
 
-    gap:12px;
+    gap:
+        12px;
 
     margin-bottom:
         16px;
@@ -919,6 +752,8 @@ button{
 }
 
 
+/* HIDDEN CONDITIONAL FIELDS */
+
 .student-fields,
 .parent-info,
 .second-emergency,
@@ -930,7 +765,7 @@ button{
 }
 
 
-/* CONSENT */
+/* MINOR CONSENT */
 
 .minor-consent{
 
@@ -949,11 +784,11 @@ button{
     border-radius:
         14px;
 
-    background:
-        var(--teal-light);
-
     color:
         #214E53;
+
+    background:
+        var(--teal-light);
 
     font-size:
         12px;
@@ -987,6 +822,8 @@ button{
 }
 
 
+/* YOUNG CHILD WAIVER */
+
 .young-child-note{
 
     margin-top:
@@ -1002,11 +839,11 @@ button{
     border-radius:
         12px;
 
-    background:
-        #FFF2C9;
-
     color:
         #6F4D14;
+
+    background:
+        #FFF2C9;
 
     font-size:
         12px;
@@ -1023,8 +860,7 @@ button{
 
     display:flex;
 
-    align-items:
-        flex-start;
+    align-items:flex-start;
 
     gap:
         10px;
@@ -1067,11 +903,11 @@ button{
     border-radius:
         14px;
 
-    background:
-        var(--teal-light);
-
     color:
         #234B4F;
+
+    background:
+        var(--teal-light);
 
     font-size:
         12px;
@@ -1108,10 +944,10 @@ button{
 
 .primary{
 
+    color:white;
+
     background:
         var(--coral);
-
-    color:white;
 
     box-shadow:
 
@@ -1131,30 +967,22 @@ button{
 
 .secondary{
 
-    background:
-        #F1E9D2;
-
     color:
         var(--charcoal);
 
-}
-
-
-.secondary:hover{
-
     background:
-        #E9DFC3;
+        #F1E9D2;
 
 }
 
 
 .danger{
 
-    background:
-        var(--red-light);
-
     color:
         #A6403E;
+
+    background:
+        var(--red-light);
 
 }
 
@@ -1165,7 +993,8 @@ button{
 
     flex-wrap:wrap;
 
-    gap:9px;
+    gap:
+        9px;
 
 }
 
@@ -1176,10 +1005,10 @@ button{
 
     display:flex;
 
-    align-items:center;
-
     justify-content:
         space-between;
+
+    align-items:center;
 
     gap:
         16px;
@@ -1265,16 +1094,16 @@ button{
         1px solid
         #E8AAA3;
 
-    background:
-        var(--red-light);
-
     color:
         #8F3432;
+
+    background:
+        var(--red-light);
 
 }
 
 
-/* SAVING */
+/* SENDING */
 
 .submit-status{
 
@@ -1337,10 +1166,7 @@ button{
 @keyframes spin{
 
     to{
-
-        transform:
-            rotate(360deg);
-
+        transform:rotate(360deg);
     }
 
 }
@@ -1398,31 +1224,44 @@ button{
 
 .confirm-logo{
 
-
-    width:110px;
-    height:110px;
-
-    object-fit:cover;
-
     display:block;
+
+    width:
+        120px;
+
+    height:
+        120px;
 
     margin:
         0
         auto
         16px;
 
-    border-radius:22px;
+    object-fit:
+        cover;
+
+    border:
+        4px solid
+        rgba(255,255,255,.65);
+
+    border-radius:
+        24px;
 
     box-shadow:
+
         0 10px 25px
-        rgba(42,42,46,.12);
+        rgba(42,42,46,.15);
 
 }
 
-     .confirm-icon{
 
-    width:62px;
-    height:62px;
+.confirm-icon{
+
+    width:
+        62px;
+
+    height:
+        62px;
 
     display:grid;
 
@@ -1436,10 +1275,10 @@ button{
     border-radius:
         50%;
 
+    color:white;
+
     background:
         var(--teal);
-
-    color:white;
 
     font-size:
         28px;
@@ -1590,7 +1429,7 @@ button{
 }
 
 
-/* PAYMENT */
+/* GOFAN */
 
 .payment-panel{
 
@@ -1667,10 +1506,10 @@ button{
 
     text-decoration:none;
 
+    color:white;
+
     background:
         var(--coral);
-
-    color:white;
 
     font-size:
         12px;
@@ -1709,28 +1548,10 @@ button{
 
 }
 
-width:210px;
 
-    aspect-ratio:1;
-
-    object-fit:cover;
-
-    border:6px solid var(--cream);
-
-    border-radius:26px;
-
-    box-shadow:
-        0 15px 35px
-        rgba(0,0,0,.25);
-
-}
-
-     
 /* MOBILE */
 
-@media(
-    max-width:760px
-){
+@media(max-width:760px){
 
     .shell{
 
@@ -1742,26 +1563,6 @@ width:210px;
 
         margin-top:
             14px;
-
-    }
-
-     .bear-run-photo{
-
-    width:120px;
-
-    border-width:4px;
-
-    border-radius:18px;
-
-}
-
-    .install-card{
-
-        align-items:
-            flex-start;
-
-        flex-direction:
-            column;
 
     }
 
@@ -1791,40 +1592,19 @@ width:210px;
     }
 
 
-    .bear-logo{
+    .bear-run-photo{
 
         width:
             120px;
 
-        border-radius:
-            18px;
+        height:
+            120px;
 
         border-width:
             4px;
 
-    }
-
-
-    .bear-logo .small{
-
-        font-size:
+        border-radius:
             18px;
-
-    }
-
-
-    .bear-logo .big{
-
-        font-size:
-            25px;
-
-    }
-
-
-    .bear-logo .run{
-
-        font-size:
-            20px;
 
     }
 
@@ -1833,9 +1613,6 @@ width:210px;
 
         padding:
             19px;
-
-        border-radius:
-            16px;
 
     }
 
@@ -1868,7 +1645,6 @@ width:210px;
 
 @media print{
 
-    .install-card,
     .hero,
     form,
     .button-row,
@@ -1881,8 +1657,7 @@ width:210px;
 
     body{
 
-        background:
-            white;
+        background:white;
 
     }
 
@@ -1904,12 +1679,6 @@ width:210px;
 </head>
 
 
-
-<!-- =========================================================
-     SECTION 3 OF 5
-     WEBSITE / APP CONTENT
-========================================================= -->
-
 <body>
 
 
@@ -1917,13 +1686,12 @@ width:210px;
     id="offlineBanner"
     class="offline-banner"
 >
-
-    You are offline.
-    Connect to the internet before submitting a registration.
-
+    You are offline. Connect to the internet before submitting.
 </div>
 
+
 <main class="shell">
+
 
 <section class="hero">
 
@@ -1932,15 +1700,13 @@ width:210px;
 
 
         <div class="hero-badge">
-
             🏃 STUDENT GOVERNMENT ASSOCIATION
-
         </div>
 
 
         <h1>
 
-            <span>
+            <span class="bear">
                 Bear Run
             </span>
 
@@ -1967,23 +1733,17 @@ width:210px;
 
 
             <div class="info-chip">
-
                 $15 per participant
-
             </div>
 
 
             <div class="info-chip">
-
                 Multiple participants allowed
-
             </div>
 
 
             <div class="info-chip">
-
                 Google account email requested
-
             </div>
 
 
@@ -1993,19 +1753,13 @@ width:210px;
     </div>
 
 
+    <div class="logo-box">
 
-<div class="logo-box">
-
-    <img
-        src="./bear-run-icon.png"
-        alt="Bear Run logo"
-        class="bear-run-photo"
-    >
-
-</div>
-
-        </div>
-
+        <img
+            src="./bear-run-icon.png"
+            alt="Bear Run logo"
+            class="bear-run-photo"
+        >
 
     </div>
 
@@ -2013,14 +1767,11 @@ width:210px;
 </section>
 
 
-
 <form
     id="registrationForm"
     novalidate
 >
 
-
-<!-- PERSON REGISTERING -->
 
 <section class="card">
 
@@ -2031,38 +1782,28 @@ width:210px;
         <div>
 
             <h2>
-
                 Person Completing Registration
-
             </h2>
 
-
             <p>
-
-                This person is the main contact
-                for this registration.
-
+                This person is the main contact for this registration.
             </p>
 
         </div>
 
 
         <div class="section-number">
-
             1
-
         </div>
 
 
     </div>
 
 
-
     <div class="form-row">
 
 
         <div class="field">
-
 
             <label for="registrantName">
 
@@ -2074,7 +1815,6 @@ width:210px;
 
             </label>
 
-
             <input
                 id="registrantName"
                 type="text"
@@ -2082,13 +1822,10 @@ width:210px;
                 required
             >
 
-
         </div>
 
 
-
         <div class="field">
-
 
             <label for="registrantEmail">
 
@@ -2100,7 +1837,6 @@ width:210px;
 
             </label>
 
-
             <input
                 id="registrantEmail"
                 type="email"
@@ -2108,16 +1844,13 @@ width:210px;
                 required
             >
 
-
         </div>
 
 
     </div>
 
 
-
     <div class="field">
-
 
         <label for="registrantPhone">
 
@@ -2129,7 +1862,6 @@ width:210px;
 
         </label>
 
-
         <input
             id="registrantPhone"
             type="tel"
@@ -2137,15 +1869,11 @@ width:210px;
             required
         >
 
-
     </div>
 
 
 </section>
 
-
-
-<!-- PARTICIPANTS -->
 
 <section class="card">
 
@@ -2156,49 +1884,35 @@ width:210px;
         <div>
 
             <h2>
-
                 Participants
-
             </h2>
 
-
             <p>
-
-                Add every person who will participate
-                in Bear Run.
-
+                Add every person who will participate in Bear Run.
             </p>
 
         </div>
 
 
         <div class="section-number">
-
             2
-
         </div>
 
 
     </div>
 
 
-
     <div class="button-row">
-
 
         <button
             type="button"
             id="addParticipantBtn"
             class="secondary"
         >
-
             + Add Participant
-
         </button>
 
-
     </div>
-
 
 
     <div id="participants"></div>
@@ -2207,9 +1921,6 @@ width:210px;
 </section>
 
 
-
-<!-- WAIVER -->
-
 <section class="card">
 
 
@@ -2219,37 +1930,28 @@ width:210px;
         <div>
 
             <h2>
-
                 Event Waiver
-
             </h2>
 
-
             <p>
-
                 Please read and accept before submitting.
-
             </p>
 
         </div>
 
 
         <div class="section-number">
-
             3
-
         </div>
 
 
     </div>
 
 
-
     <div class="waiver">
 
-
-        I understand that participating in a 5K
-        involves physical activity and possible risks.
+        I understand that participating in a 5K involves
+        physical activity and possible risks.
 
         I confirm that the information entered in this
         registration is accurate and that I am authorized
@@ -2257,9 +1959,7 @@ width:210px;
         participant or participants.
 
 
-
         <div class="check-row">
-
 
             <input
                 type="checkbox"
@@ -2267,18 +1967,15 @@ width:210px;
                 required
             >
 
-
             <label for="waiverAccepted">
 
-                I have read and agree
-                to the event waiver.
+                I have read and agree to the event waiver.
 
                 <span class="required">
                     *
                 </span>
 
             </label>
-
 
         </div>
 
@@ -2289,9 +1986,6 @@ width:210px;
 </section>
 
 
-
-<!-- TOTAL -->
-
 <section class="card">
 
 
@@ -2301,30 +1995,22 @@ width:210px;
         <div>
 
             <h2>
-
                 Review Total
-
             </h2>
 
-
             <p>
-
                 Registration is $15 per participant.
-
             </p>
 
         </div>
 
 
         <div class="section-number">
-
             4
-
         </div>
 
 
     </div>
-
 
 
     <div class="total-box">
@@ -2333,50 +2019,33 @@ width:210px;
         <div>
 
             <span>
-
                 Participants
-
             </span>
 
-
             <strong id="participantCount">
-
                 1
-
             </strong>
 
         </div>
 
 
-
         <div style="text-align:right">
 
-
             <span>
-
                 Registration Total
-
             </span>
 
-
             <strong>
-
                 $
-
                 <span id="registrationTotal">
-
                     15.00
-
                 </span>
-
             </strong>
-
 
         </div>
 
 
     </div>
-
 
 
     <div
@@ -2385,17 +2054,13 @@ width:210px;
     ></div>
 
 
-
     <button
         type="submit"
         id="submitBtn"
         class="primary"
     >
-
         Submit Registration
-
     </button>
-
 
 
     <div
@@ -2413,11 +2078,10 @@ width:210px;
 </section>
 
 
-
 <p class="privacy-note">
 
-    Registration information is collected
-    for event administration and emergency-contact purposes.
+    Registration information is collected for event administration
+    and emergency-contact purposes.
 
     Payment is handled separately through GoFan.
 
@@ -2427,9 +2091,6 @@ width:210px;
 </form>
 
 
-
-<!-- CONFIRMATION -->
-
 <section
     id="confirmation"
     class="confirmation"
@@ -2438,35 +2099,30 @@ width:210px;
 
     <div class="confirm-top">
 
-<img
-    src="./bear-run-icon.png"
-    alt="Bear Run logo"
-    class="confirm-logo"
->
-         
+
+        <img
+            src="./bear-run-icon.png"
+            alt="Bear Run logo"
+            class="confirm-logo"
+        >
+
+
         <div class="confirm-icon">
-
             ✓
-
         </div>
 
 
         <h2>
-
             Registration Submitted
-
         </h2>
 
 
         <p>
-
             Your Bear Run registration has been sent.
-
         </p>
 
 
     </div>
-
 
 
     <div class="confirm-body">
@@ -2478,51 +2134,37 @@ width:210px;
             <div class="summary-box">
 
                 <span>
-
                     Registration ID
-
                 </span>
 
                 <strong id="confirmId">
-
                     —
-
                 </strong>
 
             </div>
 
 
-
             <div class="summary-box">
 
                 <span>
-
                     Participants
-
                 </span>
 
                 <strong id="confirmCount">
-
                     —
-
                 </strong>
 
             </div>
 
 
-
             <div class="summary-box">
 
                 <span>
-
                     Total
-
                 </span>
 
                 <strong id="confirmTotal">
-
                     —
-
                 </strong>
 
             </div>
@@ -2531,35 +2173,30 @@ width:210px;
         </div>
 
 
-
         <div
             class="names-list"
             id="confirmNames"
         ></div>
 
 
-
         <div class="payment-panel">
 
 
             <h3>
-
                 GoFan Payment
-
             </h3>
 
 
             <p>
 
-                Use the GoFan button below when
-                the official payment link becomes available.
+                Use the GoFan button below when the official
+                payment link becomes available.
 
                 After paying, keep the GoFan confirmation
                 available so it can be shown to a volunteer
                 if requested.
 
             </p>
-
 
 
             <a
@@ -2569,14 +2206,11 @@ width:210px;
                 target="_blank"
                 rel="noopener"
             >
-
                 GoFan Link Coming Soon
-
             </a>
 
 
         </div>
-
 
 
         <div
@@ -2590,11 +2224,8 @@ width:210px;
                 id="printBtn"
                 class="secondary"
             >
-
                 Print / Save Confirmation
-
             </button>
-
 
 
             <button
@@ -2602,9 +2233,7 @@ width:210px;
                 id="anotherBtn"
                 class="secondary"
             >
-
                 Start Another Registration
-
             </button>
 
 
@@ -2620,12 +2249,6 @@ width:210px;
 </main>
 
 
-
-<!-- =========================================================
-     SECTION 4 OF 5
-     APP SETTINGS + HELPER FUNCTIONS
-========================================================= -->
-
 <script>
 
 (() => {
@@ -2634,42 +2257,35 @@ width:210px;
 
 
 /*
-=========================================================
-GOOGLE SHEETS
-=========================================================
+==========================================
+GOOGLE SHEETS CONNECTION
+==========================================
 */
 
-
 const GOOGLE_SHEET_WEB_APP_URL =
-
 "https://script.google.com/macros/s/AKfycbxh-hUPSYB-7wWgdDM77akRCrXdytpPjmhoervj_5mn_B9X0awOUyCo-tJ3S5gQZ9qC/exec";
 
 
-
 /*
-=========================================================
-GOFAN LINK
+==========================================
+GOFAN PLACEHOLDER
+==========================================
 
-LEAVE EMPTY FOR NOW.
-
-When you get the real GoFan link,
-put it between the quotation marks.
+When you receive the real GoFan link,
+place it between the quotation marks.
 
 Example:
 
 const GOFAN_URL =
-"https://gofan.co/your-event-link";
-=========================================================
-*/
+"https://gofan.co/your-link";
 
+==========================================
+*/
 
 const GOFAN_URL = "";
 
 
-
-const PRICE_PER_PARTICIPANT =
-    15;
-
+const PRICE_PER_PARTICIPANT = 15;
 
 
 const form =
@@ -2726,7 +2342,6 @@ const offlineBanner =
     );
 
 
-
 function escapeHtml(value){
 
     const div =
@@ -2742,7 +2357,6 @@ function escapeHtml(value){
 }
 
 
-
 function formatMoney(value){
 
     return Number(
@@ -2752,19 +2366,13 @@ function formatMoney(value){
         "en-US",
 
         {
-
-            style:
-                "currency",
-
-            currency:
-                "USD"
-
+            style:"currency",
+            currency:"USD"
         }
 
     );
 
 }
-
 
 
 function createRegistrationId(){
@@ -2830,7 +2438,6 @@ function createRegistrationId(){
 }
 
 
-
 function showError(message){
 
     errorBox.className =
@@ -2847,16 +2454,13 @@ function showError(message){
 
     errorBox.scrollIntoView({
 
-        behavior:
-            "smooth",
+        behavior:"smooth",
 
-        block:
-            "center"
+        block:"center"
 
     });
 
 }
-
 
 
 function clearError(){
@@ -2869,7 +2473,6 @@ function clearError(){
         "";
 
 }
-
 
 
 function updateTotal(){
@@ -2891,65 +2494,46 @@ function updateTotal(){
 
         (
             count
-
             *
-
             PRICE_PER_PARTICIPANT
         )
-        .toFixed(
-            2
-        );
+        .toFixed(2);
 
 }
-
 
 
 function renumberParticipants(){
 
-    const cards =
+    document
+        .querySelectorAll(
+            ".participant"
+        )
+        .forEach(
 
-        document
-            .querySelectorAll(
-                ".participant"
-            );
+            (
+                card,
+                index
+            ) => {
 
+                card
+                    .querySelector(
+                        ".participant-title"
+                    )
+                    .textContent =
 
-    cards.forEach(
+                    "Participant "
 
-        (
-            card,
-            index
-        ) => {
+                    +
 
+                    (
+                        index + 1
+                    );
 
-            card
-                .querySelector(
-                    ".participant-title"
-                )
-                .textContent =
+            }
 
-                "Participant "
-
-                +
-
-                (
-                    index + 1
-                );
-
-        }
-
-    );
+        );
 
 }
-
-
-
-/*
-=========================================================
-SECTION 5 OF 5
-PARTICIPANTS + RULES + GOOGLE SHEETS + CONFIRMATION
-=========================================================
-*/
 
 
 function createParticipant(){
@@ -2966,47 +2550,30 @@ function createParticipant(){
 
     card.innerHTML = `
 
-
         <div class="participant-top">
 
-
             <h3 class="participant-title">
-
                 Participant
-
             </h3>
-
 
             <button
                 type="button"
                 class="danger remove-participant"
             >
-
                 Remove
-
             </button>
-
 
         </div>
 
 
-
         <div class="form-row">
-
 
             <div class="field">
 
-
                 <label>
-
                     First Name
-
-                    <span class="required">
-                        *
-                    </span>
-
+                    <span class="required">*</span>
                 </label>
-
 
                 <input
                     class="first-name"
@@ -3014,24 +2581,15 @@ function createParticipant(){
                     required
                 >
 
-
             </div>
-
 
 
             <div class="field">
 
-
                 <label>
-
                     Last Name
-
-                    <span class="required">
-                        *
-                    </span>
-
+                    <span class="required">*</span>
                 </label>
-
 
                 <input
                     class="last-name"
@@ -3039,30 +2597,19 @@ function createParticipant(){
                     required
                 >
 
-
             </div>
-
 
         </div>
 
 
-
         <div class="form-row">
-
 
             <div class="field">
 
-
                 <label>
-
                     Email
-
-                    <span class="required">
-                        *
-                    </span>
-
+                    <span class="required">*</span>
                 </label>
-
 
                 <input
                     class="participant-email"
@@ -3070,24 +2617,15 @@ function createParticipant(){
                     required
                 >
 
-
             </div>
-
 
 
             <div class="field">
 
-
                 <label>
-
                     Phone Number
-
-                    <span class="required">
-                        *
-                    </span>
-
+                    <span class="required">*</span>
                 </label>
-
 
                 <input
                     class="participant-phone"
@@ -3095,27 +2633,17 @@ function createParticipant(){
                     required
                 >
 
-
             </div>
-
 
         </div>
 
 
-
         <div class="field">
 
-
             <label>
-
                 Age
-
-                <span class="required">
-                    *
-                </span>
-
+                <span class="required">*</span>
             </label>
-
 
             <input
                 class="participant-age"
@@ -3125,304 +2653,209 @@ function createParticipant(){
                 required
             >
 
-
         </div>
-
 
 
         <div class="minor-consent">
 
-
             <strong>
-
                 Parent / Guardian Consent Required
-
             </strong>
 
-
             <p>
-
-                Because this participant is age 17
-                or younger, a parent or legal guardian
-                must give permission for the participant
-                to take part in Bear Run.
-
+                Because this participant is age 17 or younger,
+                a parent or legal guardian must give permission
+                for the participant to take part in Bear Run.
             </p>
 
-
             <div class="check-row">
-
 
                 <input
                     type="checkbox"
                     class="minor-consent-checkbox"
                 >
 
-
                 <label>
 
-                    I confirm that the participant's
-                    parent or legal guardian has given
-                    permission for this participant
-                    to take part in the S.G.A. 5K.
+                    I confirm that the participant's parent
+                    or legal guardian has given permission
+                    for this participant to take part in
+                    the S.G.A. 5K.
 
-                    <span class="required">
-                        *
-                    </span>
+                    <span class="required">*</span>
 
                 </label>
 
-
             </div>
-
 
         </div>
 
 
-
         <div class="field">
-
 
             <label>
 
-                Are you currently a
-                Cypress Creek High School student?
+                Are you currently a Cypress Creek
+                High School student?
 
-                <span class="required">
-                    *
-                </span>
+                <span class="required">*</span>
 
             </label>
-
 
             <select
                 class="student-status"
                 required
             >
 
-
                 <option value="">
-
                     Select an option
-
                 </option>
-
 
                 <option value="yes">
-
                     Yes
-
                 </option>
-
 
                 <option value="no">
-
                     No
-
                 </option>
 
-
             </select>
-
 
         </div>
 
 
-
         <div class="student-fields">
-
 
             <div class="form-row">
 
-
                 <div class="field">
-
 
                     <label>
 
                         Grade
 
-                        <span class="required">
-                            *
-                        </span>
+                        <span class="required">*</span>
 
                     </label>
 
-
                     <select class="grade">
 
-
                         <option value="">
-
                             Select grade
-
                         </option>
-
 
                         <option value="9">
-
                             9th Grade
-
                         </option>
-
 
                         <option value="10">
-
                             10th Grade
-
                         </option>
-
 
                         <option value="11">
-
                             11th Grade
-
                         </option>
-
 
                         <option value="12">
-
                             12th Grade
-
                         </option>
 
-
                     </select>
-
 
                 </div>
 
 
-
                 <div class="field">
-
 
                     <label>
 
                         Student ID
 
-                        <span class="required">
-                            *
-                        </span>
+                        <span class="required">*</span>
 
                     </label>
-
 
                     <input
                         class="student-id"
                         type="text"
                     >
 
-
                 </div>
 
-
             </div>
-
 
         </div>
 
 
-
         <div class="parent-info">
-
 
             <div class="subsection">
 
-
                 <h4>
-
                     Parent / Guardian Information
-
                 </h4>
-
 
                 <div class="form-row">
 
-
                     <div class="field">
-
 
                         <label>
 
                             Parent / Guardian Name
 
-                            <span class="required">
-                                *
-                            </span>
+                            <span class="required">*</span>
 
                         </label>
-
 
                         <input
                             class="parent-name"
                             type="text"
                         >
 
-
                     </div>
 
 
-
                     <div class="field">
-
 
                         <label>
 
                             Parent / Guardian Phone
 
-                            <span class="required">
-                                *
-                            </span>
+                            <span class="required">*</span>
 
                         </label>
-
 
                         <input
                             class="parent-phone"
                             type="tel"
                         >
 
-
                     </div>
-
 
                 </div>
 
-
             </div>
-
 
         </div>
 
 
-
         <div class="subsection">
 
-
             <h4>
-
                 Emergency Contact 1
-
             </h4>
-
 
             <div class="form-row">
 
-
                 <div class="field">
-
 
                     <label>
 
                         Name
 
-                        <span class="required">
-                            *
-                        </span>
+                        <span class="required">*</span>
 
                     </label>
-
 
                     <input
                         class="emergency-one-name"
@@ -3430,24 +2863,18 @@ function createParticipant(){
                         required
                     >
 
-
                 </div>
 
 
-
                 <div class="field">
-
 
                     <label>
 
                         Phone Number
 
-                        <span class="required">
-                            *
-                        </span>
+                        <span class="required">*</span>
 
                     </label>
-
 
                     <input
                         class="emergency-one-phone"
@@ -3455,114 +2882,80 @@ function createParticipant(){
                         required
                     >
 
-
                 </div>
 
-
             </div>
-
 
         </div>
 
 
-
         <div class="second-emergency">
-
 
             <div class="subsection">
 
-
                 <h4>
-
-                    Emergency Contact 2
-                    — Required for Age 15 or Younger
-
+                    Emergency Contact 2 — Required for Age 15 or Younger
                 </h4>
-
 
                 <div class="form-row">
 
-
                     <div class="field">
-
 
                         <label>
 
                             Name
 
-                            <span class="required">
-                                *
-                            </span>
+                            <span class="required">*</span>
 
                         </label>
-
 
                         <input
                             class="emergency-two-name"
                             type="text"
                         >
 
-
                     </div>
 
 
-
                     <div class="field">
-
 
                         <label>
 
                             Phone Number
 
-                            <span class="required">
-                                *
-                            </span>
+                            <span class="required">*</span>
 
                         </label>
-
 
                         <input
                             class="emergency-two-phone"
                             type="tel"
                         >
 
-
                     </div>
-
 
                 </div>
 
-
             </div>
 
-
         </div>
-
 
 
         <div class="young-child-note">
 
-
             <strong>
-
                 Additional waiver required.
-
             </strong>
-
 
             <br>
 
+            Participants age 5 or younger must complete
+            the additional school-provided PDF waiver.
 
-            Participants age 5 or younger must
-            complete the additional school-provided
-            PDF waiver.
-
-            The school can provide this form
-            separately when it becomes available.
-
+            The school can provide this form separately
+            when it becomes available.
 
         </div>
-
 
     `;
 
@@ -3584,7 +2977,6 @@ function createParticipant(){
     updateTotal();
 
 }
-
 
 
 function setupParticipant(card){
@@ -3679,17 +3071,16 @@ function setupParticipant(card){
         );
 
 
-
     function updateStudentFields(){
 
-        const student =
+        const isStudent =
             studentStatus.value
             ===
             "yes";
 
 
         studentFields.style.display =
-            student
+            isStudent
             ?
             "block"
             :
@@ -3697,15 +3088,15 @@ function setupParticipant(card){
 
 
         grade.required =
-            student;
+            isStudent;
 
 
         studentId.required =
-            student;
+            isStudent;
 
 
         if(
-            !student
+            !isStudent
         ){
 
             grade.value =
@@ -3720,10 +3111,9 @@ function setupParticipant(card){
     }
 
 
-
     function updateAgeRules(){
 
-        const ageExists =
+        const hasAge =
             ageInput.value
             !==
             "";
@@ -3735,12 +3125,8 @@ function setupParticipant(card){
             );
 
 
-        /*
-        17 OR YOUNGER
-        */
-
         const needsParent =
-            ageExists
+            hasAge
             &&
             age <= 17;
 
@@ -3791,13 +3177,8 @@ function setupParticipant(card){
         }
 
 
-
-        /*
-        15 OR YOUNGER
-        */
-
         const needsSecondEmergency =
-            ageExists
+            hasAge
             &&
             age <= 15;
 
@@ -3832,13 +3213,8 @@ function setupParticipant(card){
         }
 
 
-
-        /*
-        AGE 5 OR YOUNGER
-        */
-
         const needsChildWaiver =
-            ageExists
+            hasAge
             &&
             age <= 5;
 
@@ -3853,24 +3229,17 @@ function setupParticipant(card){
     }
 
 
-
     studentStatus
         .addEventListener(
-
             "change",
-
             updateStudentFields
-
         );
 
 
     ageInput
         .addEventListener(
-
             "input",
-
             updateAgeRules
-
         );
 
 
@@ -3897,11 +3266,8 @@ function setupParticipant(card){
                 ){
 
                     showError(
-
                         "At least one participant is required."
-
                     );
-
 
                     return;
 
@@ -3932,7 +3298,6 @@ function setupParticipant(card){
 }
 
 
-
 function getParticipantData(card){
 
     return {
@@ -3948,7 +3313,6 @@ function getParticipantData(card){
                 .trim(),
 
 
-
         lastName:
 
             card
@@ -3957,7 +3321,6 @@ function getParticipantData(card){
                 )
                 .value
                 .trim(),
-
 
 
         email:
@@ -3970,7 +3333,6 @@ function getParticipantData(card){
                 .trim(),
 
 
-
         phone:
 
             card
@@ -3979,7 +3341,6 @@ function getParticipantData(card){
                 )
                 .value
                 .trim(),
-
 
 
         age:
@@ -3995,7 +3356,6 @@ function getParticipantData(card){
             ),
 
 
-
         parentGuardianConsent:
 
             card
@@ -4003,7 +3363,6 @@ function getParticipantData(card){
                     ".minor-consent-checkbox"
                 )
                 .checked,
-
 
 
         isStudent:
@@ -4019,7 +3378,6 @@ function getParticipantData(card){
             "yes",
 
 
-
         grade:
 
             card
@@ -4027,7 +3385,6 @@ function getParticipantData(card){
                     ".grade"
                 )
                 .value,
-
 
 
         studentId:
@@ -4038,7 +3395,6 @@ function getParticipantData(card){
                 )
                 .value
                 .trim(),
-
 
 
         parentGuardian:{
@@ -4052,7 +3408,6 @@ function getParticipantData(card){
                     .value
                     .trim(),
 
-
             phone:
 
                 card
@@ -4063,7 +3418,6 @@ function getParticipantData(card){
                     .trim()
 
         },
-
 
 
         emergencyContactOne:{
@@ -4077,7 +3431,6 @@ function getParticipantData(card){
                     .value
                     .trim(),
 
-
             phone:
 
                 card
@@ -4088,7 +3441,6 @@ function getParticipantData(card){
                     .trim()
 
         },
-
 
 
         emergencyContactTwo:{
@@ -4102,7 +3454,6 @@ function getParticipantData(card){
                     .value
                     .trim(),
 
-
             phone:
 
                 card
@@ -4113,7 +3464,6 @@ function getParticipantData(card){
                     .trim()
 
         },
-
 
 
         requiresAdditionalYoungChildWaiver:
@@ -4135,7 +3485,6 @@ function getParticipantData(card){
     };
 
 }
-
 
 
 function collectRegistration(){
@@ -4164,18 +3513,15 @@ function collectRegistration(){
             createRegistrationId(),
 
 
-
         submittedAt:
 
             new Date()
                 .toISOString(),
 
 
-
         eventName:
 
             "Bear Run – S.G.A. 5K",
-
 
 
         registrant:{
@@ -4189,7 +3535,6 @@ function collectRegistration(){
                     .value
                     .trim(),
 
-
             email:
 
                 document
@@ -4198,7 +3543,6 @@ function collectRegistration(){
                     )
                     .value
                     .trim(),
-
 
             phone:
 
@@ -4212,23 +3556,16 @@ function collectRegistration(){
         },
 
 
-
         participants:
-
             participants,
 
 
-
         participantCount:
-
             participants.length,
 
 
-
         pricePerParticipant:
-
             PRICE_PER_PARTICIPANT,
-
 
 
         total:
@@ -4240,7 +3577,6 @@ function collectRegistration(){
             PRICE_PER_PARTICIPANT,
 
 
-
         waiverAccepted:
 
             document
@@ -4250,21 +3586,16 @@ function collectRegistration(){
                 .checked,
 
 
-
         paymentMethod:
-
             "GoFan",
 
 
-
         paymentVerified:
-
             false
 
     };
 
 }
-
 
 
 function validateRegistration(data){
@@ -4273,14 +3604,11 @@ function validateRegistration(data){
         !data.waiverAccepted
     ){
 
-        return (
-
+        return(
             "You must agree to the event waiver before submitting."
-
         );
 
     }
-
 
 
     for(
@@ -4306,7 +3634,7 @@ function validateRegistration(data){
 
         ){
 
-            return (
+            return(
 
                 "Please enter a valid age for "
 
@@ -4323,7 +3651,6 @@ function validateRegistration(data){
         }
 
 
-
         if(
             participant.age <= 17
         ){
@@ -4333,7 +3660,7 @@ function validateRegistration(data){
                 !participant.parentGuardianConsent
             ){
 
-                return (
+                return(
 
                     "Parent or guardian consent is required for "
 
@@ -4350,7 +3677,6 @@ function validateRegistration(data){
             }
 
 
-
             if(
 
                 !participant.parentGuardian.name
@@ -4361,7 +3687,7 @@ function validateRegistration(data){
 
             ){
 
-                return (
+                return(
 
                     "Parent or guardian information is required for "
 
@@ -4380,7 +3706,6 @@ function validateRegistration(data){
         }
 
 
-
         if(
 
             participant.isStudent
@@ -4397,7 +3722,7 @@ function validateRegistration(data){
 
         ){
 
-            return (
+            return(
 
                 "Please enter the grade and student ID for "
 
@@ -4412,7 +3737,6 @@ function validateRegistration(data){
             );
 
         }
-
 
 
         if(
@@ -4435,7 +3759,7 @@ function validateRegistration(data){
 
         ){
 
-            return (
+            return(
 
                 participant.firstName
 
@@ -4453,7 +3777,6 @@ function validateRegistration(data){
     return "";
 
 }
-
 
 
 async function sendToGoogleSheet(data){
@@ -4493,7 +3816,6 @@ async function sendToGoogleSheet(data){
 }
 
 
-
 function showConfirmation(data){
 
     document
@@ -4501,9 +3823,7 @@ function showConfirmation(data){
             "confirmId"
         )
         .textContent =
-
         data.registrationId;
-
 
 
     document
@@ -4511,9 +3831,7 @@ function showConfirmation(data){
             "confirmCount"
         )
         .textContent =
-
         data.participantCount;
-
 
 
     document
@@ -4521,11 +3839,9 @@ function showConfirmation(data){
             "confirmTotal"
         )
         .textContent =
-
         formatMoney(
             data.total
         );
-
 
 
     document
@@ -4546,15 +3862,8 @@ function showConfirmation(data){
                 `
 
                 <p>
-
-                    ${escapeHtml(
-                        participant.firstName
-                    )}
-
-                    ${escapeHtml(
-                        participant.lastName
-                    )}
-
+                    ${escapeHtml(participant.firstName)}
+                    ${escapeHtml(participant.lastName)}
                 </p>
 
                 `
@@ -4563,14 +3872,12 @@ function showConfirmation(data){
             .join("");
 
 
-
     const gofanButton =
 
         document
             .getElementById(
                 "gofanButton"
             );
-
 
 
     if(
@@ -4604,7 +3911,6 @@ function showConfirmation(data){
 
     else{
 
-
         gofanButton.href =
             "#";
 
@@ -4622,7 +3928,6 @@ function showConfirmation(data){
     }
 
 
-
     form.style.display =
         "none";
 
@@ -4636,16 +3941,13 @@ function showConfirmation(data){
 
     window.scrollTo({
 
-        top:
-            0,
+        top:0,
 
-        behavior:
-            "smooth"
+        behavior:"smooth"
 
     });
 
 }
-
 
 
 document
@@ -4653,13 +3955,9 @@ document
         "addParticipantBtn"
     )
     .addEventListener(
-
         "click",
-
         createParticipant
-
     );
-
 
 
 form
@@ -4676,22 +3974,19 @@ form
             clearError();
 
 
-
             if(
                 !navigator.onLine
             ){
 
                 showError(
 
-                    "You are offline. Connect to the internet before submitting the registration."
+                    "You are offline. Connect to the internet before submitting."
 
                 );
-
 
                 return;
 
             }
-
 
 
             if(
@@ -4700,25 +3995,19 @@ form
 
                 form.reportValidity();
 
-
                 return;
 
             }
 
 
-
             const data =
-
                 collectRegistration();
 
 
-
             const validationError =
-
                 validateRegistration(
                     data
                 );
-
 
 
             if(
@@ -4729,11 +4018,9 @@ form
                     validationError
                 );
 
-
                 return;
 
             }
-
 
 
             submitButton.disabled =
@@ -4747,9 +4034,7 @@ form
                 );
 
 
-
             try{
-
 
                 await sendToGoogleSheet(
                     data
@@ -4760,11 +4045,9 @@ form
                     data
                 );
 
-
             }
 
             catch(error){
-
 
                 console.error(
                     error
@@ -4777,11 +4060,9 @@ form
 
                 );
 
-
             }
 
             finally{
-
 
                 submitButton.disabled =
                     false;
@@ -4798,7 +4079,6 @@ form
         }
 
     );
-
 
 
 document
@@ -4818,7 +4098,6 @@ document
     );
 
 
-
 document
     .getElementById(
         "anotherBtn"
@@ -4834,10 +4113,6 @@ document
         }
 
     );
-
-/*
-ONLINE / OFFLINE STATUS
-*/
 
 
 function updateOnlineStatus(){
@@ -4857,31 +4132,19 @@ function updateOnlineStatus(){
 
 window
     .addEventListener(
-
         "online",
-
         updateOnlineStatus
-
     );
 
 
 window
     .addEventListener(
-
         "offline",
-
         updateOnlineStatus
-
     );
 
 
 updateOnlineStatus();
-
-
-
-/*
-START WITH ONE PARTICIPANT
-*/
 
 
 createParticipant();
@@ -4891,35 +4154,60 @@ createParticipant();
 
 </script>
 
+
 <script>
 
-if ("serviceWorker" in navigator) {
+/*
+==========================================
+PWA SERVICE WORKER
+==========================================
+*/
 
-    window.addEventListener("load", () => {
+if(
+    "serviceWorker"
+    in
+    navigator
+){
 
-        navigator.serviceWorker
-            .register("./service-worker.js")
-            .then(() => {
+    window.addEventListener(
 
-                console.log(
-                    "Bears on the Run service worker registered."
+        "load",
+
+        () => {
+
+            navigator
+                .serviceWorker
+                .register(
+                    "./service-worker.js"
+                )
+                .then(
+                    () => {
+
+                        console.log(
+                            "Bear Run service worker registered."
+                        );
+
+                    }
+                )
+                .catch(
+                    error => {
+
+                        console.error(
+                            "Service worker registration failed:",
+                            error
+                        );
+
+                    }
                 );
 
-            })
-            .catch(error => {
+        }
 
-                console.error(
-                    "Service worker registration failed:",
-                    error
-                );
-
-            });
-
-    });
+    );
 
 }
 
 </script>
+
 
 </body>
 
