@@ -1,15 +1,14 @@
-const CACHE_NAME = "bear-run-v1";
+const CACHE_NAME = "bears-on-the-run-v2";
 
 const APP_FILES = [
   "./",
   "./index.html",
   "./manifest.json",
-  "./icon-192.png",
-  "./icon-512.png"
+  "./bear-run-icon.png"
 ];
 
 
-/* Install the app files */
+/* INSTALL */
 
 self.addEventListener("install", event => {
 
@@ -18,9 +17,7 @@ self.addEventListener("install", event => {
     caches
       .open(CACHE_NAME)
       .then(cache => {
-
         return cache.addAll(APP_FILES);
-
       })
 
   );
@@ -30,7 +27,7 @@ self.addEventListener("install", event => {
 });
 
 
-/* Remove old cache versions */
+/* REMOVE OLD CACHE VERSIONS */
 
 self.addEventListener("activate", event => {
 
@@ -58,10 +55,9 @@ self.addEventListener("activate", event => {
 
 
 /*
-Only cache GET requests from our own website.
+CACHE ONLY FILES FROM THIS WEBSITE.
 
-This means Google Sheets registration submissions
-still go directly to Google and are NOT cached.
+GOOGLE SHEETS POST REQUESTS ARE NOT CACHED.
 */
 
 self.addEventListener("fetch", event => {
@@ -84,14 +80,12 @@ self.addEventListener("fetch", event => {
 
       .then(response => {
 
-        const responseCopy = response.clone();
+        const copy = response.clone();
 
         caches
           .open(CACHE_NAME)
           .then(cache => {
-
-            cache.put(request, responseCopy);
-
+            cache.put(request, copy);
           });
 
         return response;
@@ -99,9 +93,7 @@ self.addEventListener("fetch", event => {
       })
 
       .catch(() => {
-
         return caches.match(request);
-
       })
 
   );
