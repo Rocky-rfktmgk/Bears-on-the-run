@@ -1,4 +1,4 @@
-const CACHE_NAME = "bears-on-the-run-v2";
+const CACHE_NAME = "bears-on-the-run-v3";
 
 const APP_FILES = [
   "./",
